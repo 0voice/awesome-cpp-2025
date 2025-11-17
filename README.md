@@ -4,9 +4,9 @@
 💡 涵盖从基础知识到实战项目的资料与示例，帮助你快速入门并逐步进阶！
 
 ## 适用人群
-- 零基础编程小白（无需 C 语言基础，从入门到入门）
-- 在校计算机相关专业学生（课程补充、项目实践、求职备战）
-- 其他语言转 C++ 开发者（快速适配 C++ 核心特性与开发场景）
+- 零基础编程小白
+- 在校计算机相关专业学生
+- 其他语言转 C++ 开发者
 - 需巩固基础、补充面试知识点的初级 C++ 工程师
 
 ## 为什么选择 C++？
@@ -14,6 +14,13 @@
 - 就业前景：互联网、金融科技、物联网、汽车电子等主流行业岗位需求稳定，稀缺性强，薪资溢价明显。
 - 生态成熟：STL/Boost等库完善，C++17/20新特性降低开发门槛，经典不过时。
 - 技术硬核：培养底层思维与性能优化能力，技术迁移性强（适配Go/Rust等）；
+
+关于这个问题，请参考：
+- [为什么你应该学习 C++](https://www.youtube.com/shorts/1Zku-mXDY9g)
+- [C++ 的应用领域及为什么学习 C++ 编程语言](https://www.youtube.com/watch?v=brqRL_t0RmM)
+- [在 AI 时代，你应该学习 C++ 吗？](https://www.youtube.com/watch?v=1POqwCxIhjo)
+- [C++ 的真相（值得你花时间吗？）](https://www.youtube.com/watch?v=q1ZmFc-sqNc)
+- [这才是你需要的 C 语言、C++ 学习路线](https://www.youtube.com/watch?v=gO4Jp78nM0g)
 
 ## 目录
 - [学习路线](#学习路线)
@@ -32,7 +39,7 @@
   - 核心语法：变量/数据类型、运算符、循环/分支（if-else、for、while）、函数（定义/调用/参数传递）、数组/字符串
   - 底层基础：编译链接流程（预处理→编译→汇编→链接）、头文件保护宏（#ifndef）、指针入门、引用（&）入门（与指针简单对比）
   - 关键关键字：const/volatile 基础用法、static 基础（局部静态变量）
-  - 常见坑：变量未初始化、数组越界、指针空悬、编译报错 vs 链接报错区分
+  - 常见坑：变量未初始化、数组越界、指针空悬、编译报错和链接报错区分
 - **工具学习**：CMake 基础（编写简单 CMakeLists.txt，实现多文件编译）
 - **学习产出**：独立完成 2 个小 Demo（带引用/const 优化的控制台计算器、猜数字游戏）
 - **阶段检验**：能独立编写 100 行内规范程序；能解释“指针和引用的3个区别”“编译与链接报错的差异”；解决语法+链接层面基础问题
@@ -41,7 +48,7 @@
 - **核心目标**：掌握 C++ 面向对象核心，能设计规范类与对象，规避 OOP 常见陷阱（拆分复杂知识点，分步骤消化）
 - **关键知识点**（分模块学习）：
   - 模块 1：类与对象基础（1 周）—— 封装、访问控制（public/private/protected）、构造函数/析构函数
-  - 模块 2：拷贝与重载（1 周）—— 拷贝构造函数、赋值运算符重载（深拷贝 vs 浅拷贝）、运算符重载
+  - 模块 2：拷贝与重载（1 周）—— 拷贝构造函数、赋值运算符重载（深拷贝和浅拷贝）、运算符重载
   - 模块 3：继承与多态（1 周）—— 继承语法、虚函数（vtable/vptr 底层原理）、多态实现逻辑
   - 模块 4：补充特性（1 周）—— static 关键字（静态成员/静态函数）、友元函数、模板基础（函数模板/类模板）
   - 常见坑：浅拷贝导致内存泄漏、析构函数未设为虚函数的问题、子类访问父类私有成员的误区
@@ -58,7 +65,7 @@
   - 常见坑：STL 迭代器失效、vector 扩容导致的性能问题、异常未捕获导致程序崩溃
 - **工具学习**：Clang-Format（统一代码风格）
 - **学习产出**：独立完成 1 个实用小工具（用 Lambda+STL 优化的文件批量重命名、简易日志系统）
-- **阶段检验**：能借助 STL 高效实现功能；能解释“vector 和 list 的区别”“Lambda 捕获列表的作用”；处理程序异常与数据持久化
+- **阶段检验**：能借助 STL 高效实现功能；能解释“vector和list 的区别”“Lambda 捕获列表的作用”；处理程序异常与数据持久化
 
 ### 阶段 4：实战提升（4-6 周）
 - **核心目标**：深入理解 C++ 主流应用场景，具备小型项目完整开发能力（延长实战周期，保证项目质量）
@@ -80,7 +87,7 @@
 - **核心目标**：掌握高频面试题，清晰表达技术思路，提升面试竞争力（延长复盘时间，避免遗漏）
 - **关键动作**：
   - 知识点复盘（1 周）：核心语法、OOP 特性（封装/继承/多态）、STL 底层、内存管理、多线程、C++11+ 特性
-  - 刷题训练（1 周）：高频概念题（指针 vs 引用/深拷贝 vs 浅拷贝/虚函数原理）、编程题（数组/字符串/链表/简单算法）
+  - 刷题训练（1 周）：高频概念题（指针和引用/深拷贝和浅拷贝/虚函数原理）、编程题（数组/字符串/链表/简单算法）
   - 项目复盘（1 周）：总结项目亮点（性能优化/线程安全设计）、问题解决方案（内存泄漏排查/死锁修复）
 - **学习产出**：个人面试笔记（知识点+错题+项目复盘）、编程题错题集
 - **阶段检验**：应对基础面试无压力；编程题能在规定时间内完成并解释思路；能清晰阐述项目设计与问题解决方案
@@ -90,13 +97,13 @@
 ### 基础语法篇
 - **核心知识点**：
   - **变量与数据类型**：整型/浮点型/字符型/布尔型、const、typedef、auto、decltype
-  - **运算符与表达式**：算术/关系/逻辑运算符、复合赋值、自增自减（前置vs后置）
+  - **运算符与表达式**：算术/关系/逻辑运算符、复合赋值、自增自减（前置和后置）
   - **控制流**：if-else、switch、for/while/do-while、break/continue、cin/cout+iomanip、namespace
   - **函数**：定义/声明、值/引用/指针传参、返回值、函数重载、默认参数、lambda简介
-  - **数组与字符串**：一维数组、C风格字符串 vs std::string（常用操作）
-  - **指针入门**：定义/解引用/取地址、指针与数组/函数、野指针/nullptr、指针vs引用（核心区别）
+  - **数组与字符串**：一维数组、C风格字符串和std::string（常用操作）
+  - **指针入门**：定义/解引用/取地址、指针与数组/函数、野指针/nullptr、指针和引用（核心区别）
 - **实用工具**：CMake（多文件编译）、GDB（基础调试）
-- **练习方向**：Hello World、带输入校验的循环计算器、指针报错调试
+- **练习方向**：带输入校验的循环计算器、指针报错调试
 - **易错点速记**：变量未初始化、数组越界、指针空悬、输入缓冲区残留
 
 ### 面向对象篇
@@ -104,7 +111,7 @@
   - **类与对象**：class/struct区别、成员变量/函数、对象创建（栈/堆）、访问控制（public/private/protected）
   - **构造与析构**：默认/带参/拷贝/移动构造、析构函数（虚析构必要性）、初始化列表、RAII原则
   - **继承与多态**：继承语法、基类/派生类、虚函数、纯虚函数+抽象类、vtable简介
-  - **运算符重载**：赋值/算术/关系/<<运算符、深拷贝vs浅拷贝
+  - **运算符重载**：赋值/算术/关系/<<运算符、深拷贝和浅拷贝
   - **模板基础**：函数模板、类模板、STL容器底层关联
 - **实用工具**：Git（代码版本管理）、Clang-Format（代码格式化）
 - **练习方向**：Point类（重载+/-/==/<<）、Shape多态继承树、带深拷贝的学生管理系统
@@ -147,15 +154,24 @@
 | C++ Programming: Basic Skills | [edX](https://www.edx.org/learn/c-programming/codio-c-programming-basic-skills) |
 | Programming Abstractions (CS106B) | [YouTube](https://www.youtube.com/playlist?list=PLFE6E58F856038C69) |
 
-### 书籍推荐
-| 书籍名称 | 作者 |
-|----------|------|
-| 《C++ Primer》（第 5/6 版） | Stanley B. Lippman 等 |
-| 《Accelerated C++》 | Andrew Koenig & Barbara E. Moo |
-| 《Programming: Principles and Practice Using C++》（第 2 版） | Bjarne Stroustrup |
-| 《Effective C++》（第 3 版） | Scott Meyers |
-| 《The C++ Programming Language》（第 4 版） | Bjarne Stroustrup |
-| 《Modern C++ Design》 | Andrei Alexandrescu |
+### 实体书推荐
+| 书籍名称 | 作者 | 简介 |
+|----------|------|------|
+| 《C++ Primer》（第 5/6 版） | Stanley B. Lippman 等 | 全面入门圣经，从语法到 STL，强调现代实践，适合零基础自学者。 |
+| 《Accelerated C++》 | Andrew Koenig & Barbara E. Moo | 项目驱动快速上手，聚焦高效代码，适合有基础初学者。 |
+| 《Programming: Principles and Practice Using C++》（第 2 版） | Bjarne Stroustrup | 原则+实践教材，讲解抽象与算法，适合理解语言哲学者。 |
+| 《Effective C++》（第 3 版） | Scott Meyers | 55 条最佳实践，避免陷阱，提升中级代码质量。 |
+| 《The C++ Programming Language》（第 4 版） | Bjarne Stroustrup | 官方参考手册，详尽标准与高级特性，资深开发者必备。 |
+| 《Modern C++ Design》 | Andrei Alexandrescu | 模板元编程与泛型模式，深度设计技巧，针对经验程序员。 |
+
+### 电子书推荐
+| 书籍名称 | 作者 | 简介 |
+|----------|-----------|------|
+| [A Complete Guide to Programming in C++](https://www.idpoisson.fr/volkov/C%2B%2B.pdf) | Ulla Kirchartz & Peter Müller | 从零基础到高级，覆盖语法、OOP 和 STL，带练习和参考。 |
+| [Beginning C++ Programming](https://notalentgeek.github.io/note/note/project/project-independent/pi-brp-beginning-c-programming/document/20170807-1504-cet-1-book-and-source-1.pdf) | Ivor Horton | 入门指南，逐步讲解语法、函数和类，适合初学者。 |
+| [C++ Tutorial](https://cds.iisc.ac.in/wp-content/uploads/DS286.AUG2016.Lab2_.cpp_tutorial.pdf) | IISc Bangalore | 简明教程，焦点基础语法、指针和文件 IO，大学讲义风格。 |
+| [CS 200: Concepts of Programming using C++ (Spring 2025)](https://rachel.likespizza.com/course-archives/202501_CS200.pdf) | Rachel Wil Singh | 2025 课程笔记，覆盖基础概念、数据结构和调试。 |
+| [C++ Annotations (Version 11.0)](https://www.icce.rug.nl/documents/cplusplus/11.0/C++Annotations-11.0.pdf) | Frank B. Brokken | 全面参考书，详细 OOP、多线程和现代特性，免费开源。 |
 
 ### 网站推荐
 | 网站名称 | 链接 |
@@ -179,7 +195,7 @@
 ### 2. 集成开发环境
 - [Visual Studio](https://visualstudio.microsoft.com/)：全功能 IDE
 - [CLion](https://www.jetbrains.com/clion/)：智能 IDE
-- [VS Code](https://code.visualstudio.com/)：轻量编辑器
+- [VSCode](https://code.visualstudio.com/)：轻量编辑器
 - [Code::Blocks](http://www.codeblocks.org/)：免费开源
 - [Dev-C++](https://www.dev-cpp.com/)：轻量简单
 
