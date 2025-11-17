@@ -92,6 +92,7 @@
 - **学习产出**：个人面试笔记（知识点+错题+项目复盘）、编程题错题集
 - **阶段检验**：应对基础面试无压力；编程题能在规定时间内完成并解释思路；能清晰阐述项目设计与问题解决方案
 
+参考资源：[C++ Developer Roadmap](https://roadmap.sh/cpp)
 
 ## 入门教程
 ### 基础语法篇
@@ -174,17 +175,17 @@
 | [C++ Annotations (Version 11.0)](https://www.icce.rug.nl/documents/cplusplus/11.0/C++Annotations-11.0.pdf) | Frank B. Brokken | 全面参考书，详细 OOP、多线程和现代特性，免费开源。 |
 
 ### 网站推荐
-| 网站名称 | 链接 |
+| 网站名称 | 简介 |
 |----------|------|
-| 菜鸟教程 | [runoob.com](https://www.runoob.com/cplusplus/cpp-tutorial.html) |
-| LearnCpp.com | [learncpp.com](https://www.learncpp.com/) |
-| CPlusPlus.com | [cplusplus.com](https://cplusplus.com/) |
-| GeeksforGeeks | [geeksforgeeks.org](https://www.geeksforgeeks.org/c-plus-plus/) |
-| Codecademy | [codecademy.com/learn/learn-c-plus-plus](https://www.codecademy.com/learn/learn-c-plus-plus) |
-| Coursera | [coursera.org](https://www.coursera.org/courses?query=c%2B%2B) |
-| CppReference | [cppreference.com](https://en.cppreference.com/w/) |
-| LeetCode | [leetcode.com](https://leetcode.com/problemset/all/?search=C%2B%2B) |
-| GitHub Awesome C++ | [github.com/fffaraz/awesome-cpp](https://github.com/fffaraz/awesome-cpp)
+| [菜鸟教程](https://www.runoob.com/cplusplus/cpp-tutorial.html) | 中文在线C++教程平台，提供从基础语法到高级主题的互动学习资源，适合零基础初学者。 |
+| [LearnCpp.com](https://www.learncpp.com/) | 免费的英文C++教程网站，强调最佳实践和常见错误，避免，覆盖核心概念到现代C++特性。 |
+| [CPlusPlus.com](https://cplusplus.com/) | 全面的C++参考手册和教程，包括语法解释、示例代码和论坛讨论，适合自学者和开发者。 |
+| [GeeksforGeeks](https://www.geeksforgeeks.org/c-plus-plus/) | 编程知识库，提供C++算法、数据结构和面试题的详细文章与代码片段，面向求职者。 |
+| [Codecademy](https://www.codecademy.com/learn/learn-c-plus-plus) | 互动式C++学习路径，通过浏览器编码练习基础到中级技能，结合项目实践。 |
+| [Coursera](https://www.coursera.org/courses?query=c%2B%2B) | 大学级C++在线课程集合，如加州大学和密歇根大学的专项，包含视频、测验和证书。 |
+| [CppReference](https://en.cppreference.com/w/) | 权威的C++标准库在线参考文档，精确描述API、模板和语言特性，适合专业开发者查询。 |
+| [LeetCode](https://leetcode.com/problemset/all/?search=C%2B%2B) | 算法和编码挑战平台，支持C++提交，提供海量题目用于刷题和面试准备。 |
+| [GitHub Awesome C++](https://github.com/fffaraz/awesome-cpp) | 精选C++开源资源列表，包括框架、库、书籍和工具，助力深入探索生态系统。 |
 
 ## 常用工具
 ### 1. 编译器
