@@ -24,7 +24,7 @@
 
 ## 目录
 - [学习路线](#学习路线)
-- [入门教程](#入门教程)
+- [核心知识点](#核心知识点)
 - [推荐资源](#推荐资源)
 - [常用工具](#常用工具)
 - [应用方向](#应用方向)
@@ -43,6 +43,10 @@
        
 </details>
 
+### 阶段0（0.5-1天）
+- **核心目标**：完成环境搭建，能编译运行第一个 C++ 程序，上手基础工具
+- **环境搭建**：Windows（MinGW+VS Code）/ Mac（Xcode Command Line Tools）/ Linux（GCC）
+
 ### 阶段 1：入门基础（2-3 周）
 - **核心目标**：理解 C++ 基本语法规则与底层逻辑，实现“输入→处理→输出”规范逻辑，规避入门常见坑
 - **关键知识点**：
@@ -51,7 +55,7 @@
   - 关键关键字：const/volatile 基础用法、static 基础（局部静态变量）
   - 常见坑：变量未初始化、数组越界、指针空悬、编译报错和链接报错区分
 - **工具学习**：CMake 基础（编写简单 CMakeLists.txt，实现多文件编译）
-- **学习产出**：独立完成 2 个小 Demo（带引用/const 优化的控制台计算器、猜数字游戏）
+- **学习产出**：独立完成 2-3 个小 Demo（带引用/const 优化的控制台计算器、猜数字游戏、简易通讯录（数组版，支持增删改查+排序））
 - **阶段检验**：能独立编写 100 行内规范程序；能解释“指针和引用的3个区别”“编译与链接报错的差异”；解决语法+链接层面基础问题
 
 ### 阶段 2：核心特性（3-4 周）
@@ -74,7 +78,7 @@
   - 模块 3：实用技能与现代 C++（1 周）—— 文件 IO（读写文本/二进制文件）、异常处理（try-catch）、C++11+ 基础特性（auto/范围 for/nullptr）
   - 常见坑：STL 迭代器失效、vector 扩容导致的性能问题、异常未捕获导致程序崩溃
 - **工具学习**：Clang-Format（统一代码风格）
-- **学习产出**：独立完成 1 个实用小工具（用 Lambda+STL 优化的文件批量重命名、简易日志系统）
+- **学习产出**：独立完成 1 个实用小工具（高性能词频统计工具、简易日志系统）
 - **阶段检验**：能借助 STL 高效实现功能；能解释“vector和list 的区别”“Lambda 捕获列表的作用”；处理程序异常与数据持久化
 
 ### 阶段 4：实战提升（4-6 周）
@@ -102,50 +106,43 @@
 - **学习产出**：个人面试笔记（知识点+错题+项目复盘）、编程题错题集
 - **阶段检验**：应对基础面试无压力；编程题能在规定时间内完成并解释思路；能清晰阐述项目设计与问题解决方案
 
-参考资源：[C++ Developer Roadmap](https://roadmap.sh/cpp)
+### 打卡表
+| 周数 | 阶段 | 推荐资源 | 阶段任务 |
+|------|----------|----------------|--------------|
+| 第0周 | 阶段0 | [清晰易懂的C+＋开发环境搭建教程](https://blog.51cto.com/u_16349720/14112761)| 完成开发环境搭建 |
+| 第1-3周  | 阶段 1 | [黑马程序员](https://www.bilibili.com/video/BV1et411b73Z/?spm_id_from=333.337.search-card.all.click&vd_source=b1133efda5c53025ed35233121e57402)或 [翁恺《C++ 程序设计》](https://www.bilibili.com/video/BV1dr4y1n7vA/?spm_id_from=333.337.search-card.all.click&vd_source=b1133efda5c53025ed35233121e57402) | 完成3个demo放GitHub |
+| 第4-7周  | 阶段 2 | 《C++ Primer》 | 学生/图书管理系统完整版 |
+| 第7-9周  | 阶段 3 | 《Effective Modern C++》 | 词频统计工具 |
+| 第10-15周 | 阶段 4 | [实战项目](#实战项目)中选一个大项目 | 完成项目传GitHub |
+| 第16-18周 | 阶段 5 | 牛客/LeetCode C++ 专区 | 高频笔面题 + 项目复盘 |
 
-## 入门教程
+## 核心知识点
 ### 基础语法篇
-- **核心知识点**：
-  - **变量与数据类型**：整型/浮点型/字符型/布尔型、const、typedef、auto、decltype
+  - **变量与数据类型**：整型/浮点型/字符型/布尔型、const、typedef
   - **运算符与表达式**：算术/关系/逻辑运算符、复合赋值、自增自减（前置和后置）
   - **控制流**：if-else、switch、for/while/do-while、break/continue、cin/cout+iomanip、namespace
   - **函数**：定义/声明、值/引用/指针传参、返回值、函数重载、默认参数、lambda简介
   - **数组与字符串**：一维数组、C风格字符串和std::string（常用操作）
   - **指针入门**：定义/解引用/取地址、指针与数组/函数、野指针/nullptr、指针和引用（核心区别）
-- **实用工具**：CMake（多文件编译）、GDB（基础调试）
-- **练习方向**：带输入校验的循环计算器、指针报错调试
-- **易错点速记**：变量未初始化、数组越界、指针空悬、输入缓冲区残留
 
 ### 面向对象篇
-- **核心知识点**：
   - **类与对象**：class/struct区别、成员变量/函数、对象创建（栈/堆）、访问控制（public/private/protected）
-  - **构造与析构**：默认/带参/拷贝/移动构造、析构函数（虚析构必要性）、初始化列表、RAII原则
+  - **构造与析构**：默认/带参/拷贝/移动构造与移动赋值、析构函数（虚析构必要性）、初始化列表、RAII原则、智能指针初步认识、Rule of Five
   - **继承与多态**：继承语法、基类/派生类、虚函数、纯虚函数+抽象类、vtable简介
   - **运算符重载**：赋值/算术/关系/<<运算符、深拷贝和浅拷贝
   - **模板基础**：函数模板、类模板、STL容器底层关联
-- **实用工具**：Git（代码版本管理）、Clang-Format（代码格式化）
-- **练习方向**：Point类（重载+/-/==/<<）、Shape多态继承树、带深拷贝的学生管理系统
-- **易错点速记**：浅拷贝导致双重释放、析构函数未设为虚函数、模板分离编译问题
 
 ### 进阶基础篇
-- **核心知识点**：
   - **STL**：容器（vector/list/map/unordered_map/set）、迭代器（失效场景）、常用算法（sort/find/count/for_each）、lambda配合STL
   - **文件IO**：文本/二进制文件读写、fstream、文件指针操作、数据持久化
   - **异常处理**：try-catch/throw、自定义异常类、noexcept
   - **内存管理**：new/delete、malloc/free区别、智能指针（unique_ptr/shared_ptr/weak_ptr）、内存泄漏避免
-- **实用工具**：Valgrind（内存泄漏检测）、Clang-Format
-- **练习方向**：STL词频统计工具（文件读写）、内存泄漏模拟与修复
-- **易错点速记**：STL迭代器失效、vector扩容性能问题、shared_ptr循环引用
+  - **现代特性**：auto、decltype、lambda
 
 ### 实战提升篇
-- **核心知识点**：
   - **多线程**：std::thread、mutex/lock_guard、condition_variable、atomic、线程池原理、死锁避免
   - **网络编程**：TCP/UDP基础、Socket编程流程（服务端/客户端）、TCP粘包问题、IO多路复用简介
   - **设计模式**：单例（线程安全版）、简单工厂/工厂方法、策略模式（适用场景+核心代码）
-- **实用工具**：GProf（性能分析）、ThreadSanitizer（数据竞争检测）
-- **练习方向**：线程安全计数器、TCP简单聊天程序、单例模式日志系统
-- **易错点速记**：多线程死锁、网络粘包、过度设计模式
 
 
 
@@ -252,5 +249,74 @@
 | **金融科技/高频交易** | 高频交易系统、量化交易引擎、金融风控系统（要求低延迟、高可靠） |  [QuickFIX](http://www.quickfixengine.org/)：FIX 协议库。<br> [Boost.Asio](https://www.boost.org/)：低延迟网络。 |
 
 ## 实战项目
+### 桌面应用开发
+| 项目名称                                                         | 难度       | 核心技能                                   |
+|------------------------------------------------------------------|------------|--------------------------------------------|
+| [ocornut/imgui](https://github.com/ocornut/imgui)               | ★★☆☆☆     | 立即模式 GUI、调试工具                     |
+| [zhuzichu520/FluentUI](https://github.com/zhuzichu520/FluentUI) | ★★☆☆☆     | 现代 Qt + Win11 风格                       |
+| [microsoft/terminal](https://github.com/microsoft/terminal)    | ★★★★☆     | 大型现代化桌面、GPU 渲染                   |
+| [jurplel/qmc-decode-gui](https://github.com/jurplel/qmc-decode-gui) | ★★☆☆☆ | Qt 实用工具、跨平台打包                    |
+| [flameshot-org/flameshot](https://github.com/flameshot-org/flameshot) | ★★★☆☆ | 截图工具、Qt + 图像处理                     |
+| [deskflow/deskflow](https://github.com/debauchee/barrier)      | ★★★★☆     | 多设备鼠标共享、跨平台网络                 |
+
+### 嵌入式开发
+| 项目名称                                                         | 难度       | 核心技能                                   |
+|------------------------------------------------------------------|------------|--------------------------------------------|
+| [bblanchon/ArduinoJson](https://github.com/bblanchon/ArduinoJson) | ★☆☆☆☆   | 静态内存 JSON                              |
+| [lvgl/lvgl](https://github.com/lvgl/lvgl)                      | ★★☆☆☆     | 嵌入式 GUI 最强库                          |
+| [zephyrproject-rtos/zephyr](https://github.com/zephyrproject-rtos/zephyr) | ★★★★☆ | 现代 RTOS、BLE、驱动                       |
+| [platformio/platformio-core](https://github.com/platformio/platformio-core) | ★★★☆☆ | 嵌入式构建系统                             |
+| [RT-Thread/rt-thread](https://github.com/RT-Thread/rt-thread)   | ★★★★☆     | 国产最强 RTOS、组件化                      |
+| [espressif/esp-idf](https://github.com/espressif/esp-idf)      | ★★★★☆     | ESP32 官方 SDK、低功耗                     |
+
+### 后端/服务器开发
+| 项目名称                                                         | 难度       | 核心技能                                   |
+|------------------------------------------------------------------|------------|--------------------------------------------|
+| [yhirose/cpp-httplib](https://github.com/yhirose/cpp-httplib)   | ★☆☆☆☆     | 单头文件 Web 服务器                        |
+| [drogonframework/drogon](https://github.com/drogonframework/drogon) | ★★☆☆☆ | 高性能 Web 框架、协程                      |
+| [chenshuo/muduo](https://github.com/chenshuo/muduo)             | ★★★★☆     | Reactor 网络库圣经                         |
+| [apache/brpc](https://github.com/apache/brpc)                   | ★★★★☆     | 百度 RPC 框架、bthread                     |
+| [Tencent/libco](https://github.com/Tencent/libco)               | ★★★★☆     | 协程库（微信后台在用）                     |
+| [scylladb/seastar](https://github.com/scylladb/seastar)         | ★★★★★     | 共享无锁、百万 QPS                         |
+| [userver-framework/userver](https://github.com/userver-framework/userver) | ★★★★★ | C++20 协程服务框架                         |
+
+### 游戏开发
+| 项目名称                                                         | 难度       | 核心技能                                   |
+|------------------------------------------------------------------|------------|--------------------------------------------|
+| [SFML/SFML](https://github.com/SFML/SFML)                       | ★☆☆☆☆     | 轻量 2D 游戏库                             |
+| [skypjack/entt](https://github.com/skypjack/entt)               | ★★☆☆☆     | ECS 架构                                   |
+| [RobLoach/raylib-cpp](https://github.com/RobLoach/raylib-cpp)   | ★★☆☆☆     | 极简游戏开发库                             |
+| [TheCherno/Hazel](https://github.com/TheCherno/Hazel)           | ★★★★☆     | 从零写游戏引擎（教学级）                   |
+| [godotengine/godot](https://github.com/godotengine/godot)      | ★★★★☆     | 完整开源引擎                               |
+| [cocos2d/cocos-engine](https://github.com/cocos2d/cocos-engine)| ★★★★☆     | 国内手游最强引擎                           |
+
+### 音视频/流媒体开发
+| 项目名称                                                         | 难度       | 核心技能                                   |
+|------------------------------------------------------------------|------------|--------------------------------------------|
+| [obsproject/obs-studio](https://github.com/obsproject/obs-studio) | ★★★★☆   | 实时推流、插件系统                         |
+| [FFmpeg/FFmpeg](https://github.com/FFmpeg/FFmpeg)               | ★★★★☆     | 音视频编解码全家桶                         |
+| [bluenviron/mediamtx](https://github.com/bluenviron/mediamtx)   | ★★★☆☆     | 零依赖流媒体服务器                         |
+| [Haivision/srt](https://github.com/Haivision/srt)               | ★★★★☆     | 低延迟传输协议                             |
+| [isl-org/Open3D](https://github.com/isl-org/Open3D)             | ★★★★☆     | 3D 数据处理、点云                          |
+
+### 人工智能/机器学习
+| 项目名称                                                         | 难度       | 核心技能                                   |
+|------------------------------------------------------------------|------------|--------------------------------------------|
+| [nlohmann/json](https://github.com/nlohmann/json)               | ★☆☆☆☆     | 数据预处理必备                             |
+| [opencv/opencv](https://github.com/opencv/opencv)               | ★★★☆☆     | 图像预处理、DNN 模块                       |
+| [Tencent/ncnn](https://github.com/Tencent/ncnn)                 | ★★★☆☆     | 手机端推理框架                             |
+| [alibaba/MNN](https://github.com/alibaba/MNN)                   | ★★★★☆     | 阿里移动端推理引擎                         |
+| [microsoft/onnxruntime](https://github.com/microsoft/onnxruntime) | ★★★☆☆   | 跨平台模型推理                             |
+| [pytorch/pytorch (LibTorch)](https://github.com/pytorch/pytorch) | ★★★★☆   | C++ 动态图、自定义算子                     |
+
+### 系统编程/内核开发
+| 项目名称                                                         | 难度       | 核心技能                                   |
+|------------------------------------------------------------------|------------|--------------------------------------------|
+| [gabime/spdlog](https://github.com/gabime/spdlog)               | ★☆☆☆☆     | 高性能日志                                 |
+| [sqlite/sqlite](https://github.com/sqlite/sqlite)               | ★★★★☆     | 数据库内核、B-tree                         |
+| [facebook/folly](https://github.com/facebook/folly)             | ★★★★★     | Facebook 底层库                            |
+| [microsoft/Detours](https://github.com/microsoft/Detours)       | ★★★★☆     | Windows Hook                               |
+| [ClickHouse/ClickHouse](https://github.com/ClickHouse/ClickHouse) | ★★★★★   | 列式数据库、向量化执行                     |
+| [torvalds/linux](https://github.com/torvalds/linux)             | ★★★★★     | 内核开发                                   |
 
 ## 面试题
