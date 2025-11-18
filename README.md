@@ -33,6 +33,16 @@
 
 ## 学习路线
 
+<details open>
+  <summary>点击收起 / 展开 C++ 学习路线图</strong></summary>
+  <br>
+  
+  <img src="https://raw.githubusercontent.com/0voice/awesome-modern-cpp-2025/main/roadmap/cpp-roadmap.svg" 
+       width="100%" 
+       style="max-height: 900px;">
+       
+</details>
+
 ### 阶段 1：入门基础（2-3 周）
 - **核心目标**：理解 C++ 基本语法规则与底层逻辑，实现“输入→处理→输出”规范逻辑，规避入门常见坑
 - **关键知识点**：
