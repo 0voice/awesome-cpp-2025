@@ -33,14 +33,8 @@ Relevant discussions:
 - [Interview Preparation](#interview-preparation)
 
 ## Learning Roadmap
-<details open>
-  <summary>Click to collapse / expand the C++ roadmap</summary>
-  <br>
 
-  <img src="https://raw.githubusercontent.com/0voice/awesome-modern-cpp-2025/main/roadmap/cpp-roadmap.en.svg"
-       width="100%"
-       style="max-height: 900px;">
-</details>
+  <img src="https://raw.githubusercontent.com/0voice/awesome-modern-cpp-2025/main/roadmap/cpp-roadmap.en.svg">
 
 ### Stage 0: Preparation (0.5–1 day)
 **Goal**: Set up environment, compile and run your first C++ program  
