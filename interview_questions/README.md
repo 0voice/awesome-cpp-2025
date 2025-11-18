@@ -1,4 +1,16 @@
 # C++高频面试题
+
+## 目录
+[语言基础](#语言基础)  
+[面向对象](#面向对象)  
+[内存管理](#内存管理)  
+[STL与容器](#stl与容器)   
+[现代C++特性](#现代c特性)  
+[多线程与并发](#多线程与并发)  
+[网络编程](#网络编程)  
+[设计模式与架构](#设计模式与架构)  
+[手撕代码](#手撕代码)  
+
 ## 语言基础
 ### C 和 C++ 的区别
 C 是过程式语言，C++ 是多范式（过程式 + 面向对象 + 泛型）。C++ 增加了 class、继承、多态、模板、STL、异常处理、RAII 等，天然支持面向对象和泛型编程，同时兼容全部 C 代码。
@@ -139,7 +151,7 @@ make_shared 一次分配（控制块+对象），效率更高，异常安全。
 ### alignas 和 alignof 的区别
 alignas 指定对齐，alignof 查询类型对齐要求。
 
-## STL 与容器
+## STL与容器
 ### STL 六大组件
 容器、算法、迭代器、仿函数、适配器、分配器。
 
@@ -172,7 +184,7 @@ list：删除仅影响当前迭代器
 ### 常用 STL 算法
 sort、stable_sort、lower_bound、upper_bound、find、accumulate、transform、for_each（配合 lambda）
 
-## 现代 C++（11/14/17/20）
+## 现代C++特性
 ### C++11 最重要的几个新特性
 auto、lambda、智能指针、move 语义、nullptr、右值引用、decltype、constexpr、线程支持
 
@@ -248,9 +260,72 @@ static_cast（基本类型、上下转型）、dynamic_cast（运行时类型检
 ### SFINAE 和 std::enable_if
 Substitution Failure Is Not An Error：模板重载失败不报错，常用于条件启用模板（enable_if）。
 
-## 设计模式与手撕代码
-### 常见设计模式
-单例、工厂、抽象工厂、策略、观察者、装饰器、适配器、模板方法
+## 网络编程
+### TCP 三次握手、四次挥手
+**三次握手**
+- 目的：建立双向可靠连接，同步双方初始序列号（ISN）
+- 流程：
+  1. 主动方（CLOSED→SYN_SENT）：发 SYN + 自身 ISN
+  2. 被动方（LISTEN→SYN_RCVD）：回 SYN+ACK + 自身 ISN + 确认号=主动方 ISN+1
+  3. 主动方（SYN_SENT→ESTABLISHED）：回 ACK + 确认号=被动方 ISN+1 → 被动方→ESTABLISHED
+
+ **四次挥手**
+- 目的：关闭双向连接，确保数据完全传输（以主动方先关闭为例）
+- 流程：
+  1. 主动方（ESTABLISHED→FIN_WAIT_1）：发 FIN（不再发数据，可收数据）
+  2. 被动方（ESTABLISHED→CLOSE_WAIT）：回 ACK → 主动方→FIN_WAIT_2
+  3. 被动方（CLOSE_WAIT→LAST_ACK）：处理完数据后发 FIN
+  4. 主动方（FIN_WAIT_2→TIME_WAIT）：回 ACK → 被动方→CLOSED；主动方等 2MSL 后关闭
+
+### TIME_WAIT 和 CLOSE_WAIT 的区别
+- TIME_WAIT：
+  - 所属方：主动关闭方
+  - 触发：发送最后一个 ACK 后
+  - 时长：2MSL（避免旧报文干扰）
+  - 问题：短连接场景易端口耗尽
+- CLOSE_WAIT：
+  - 所属方：被动关闭方
+  - 触发：收到对方 FIN 并回复 ACK 后
+  - 时长：无固定值（需应用层调用 close()）
+  - 问题：应用层未关连接会导致资源泄漏
+
+### select、poll、epoll 的区别与原理
+- select：
+  - 底层：位图（fd_set）
+  - 连接上限：FD_SETSIZE（默认 1024）
+  - 效率：O(n)（遍历所有 fd）
+  - 特性：水平触发、每次拷贝 fd 集合、跨平台
+  - 场景：少量连接
+- poll：
+  - 底层：动态数组（pollfd[]）
+  - 连接上限：无（依赖内存）
+  - 效率：O(n)（遍历所有 fd）
+  - 特性：水平触发、每次拷贝数组、跨平台
+  - 场景：中量连接
+- epoll（Linux 特有）：
+  - 底层：红黑树+就绪链表
+  - 连接上限：无（依赖内存）
+  - 效率：O(1)（仅处理就绪 fd）
+  - 特性：水平/边缘触发、仅初始化拷贝、共享 fd
+  - 场景：高并发（万级+）
+
+### Reactor 和 Proactor 模型
+- Reactor（反应堆）：
+  - 核心：被动等事件就绪（I/O 可读/可写）
+  - 操作：事件就绪后应用层主动读写
+  - 依赖：非阻塞 I/O + 事件通知
+  - 特点：易实现、复杂度低
+  - 示例：Nginx（epoll+Reactor）
+- Proactor（前摄器）：
+  - 核心：主动发起 I/O 操作，等完成通知
+  - 操作：内核完成读写后通知应用层
+  - 依赖：异步 I/O + 完成通知
+  - 特点：复杂度高、依赖内核支持
+  - 示例：Windows IOCP
+
+## 设计模式与架构
+
+## 手撕代码
 ### 手撕线程安全单例
 ```cpp
 class Singleton {
@@ -452,67 +527,3 @@ public:
 };
 ```
 核心：三指针 + 2倍扩容 + move 优化
-
-## 网络编程
-### TCP 三次握手、四次挥手
-**三次握手**
-- 目的：建立双向可靠连接，同步双方初始序列号（ISN）
-- 流程：
-  1. 主动方（CLOSED→SYN_SENT）：发 SYN + 自身 ISN
-  2. 被动方（LISTEN→SYN_RCVD）：回 SYN+ACK + 自身 ISN + 确认号=主动方 ISN+1
-  3. 主动方（SYN_SENT→ESTABLISHED）：回 ACK + 确认号=被动方 ISN+1 → 被动方→ESTABLISHED
-
- **四次挥手**
-- 目的：关闭双向连接，确保数据完全传输（以主动方先关闭为例）
-- 流程：
-  1. 主动方（ESTABLISHED→FIN_WAIT_1）：发 FIN（不再发数据，可收数据）
-  2. 被动方（ESTABLISHED→CLOSE_WAIT）：回 ACK → 主动方→FIN_WAIT_2
-  3. 被动方（CLOSE_WAIT→LAST_ACK）：处理完数据后发 FIN
-  4. 主动方（FIN_WAIT_2→TIME_WAIT）：回 ACK → 被动方→CLOSED；主动方等 2MSL 后关闭
-
-### TIME_WAIT 和 CLOSE_WAIT 的区别
-- TIME_WAIT：
-  - 所属方：主动关闭方
-  - 触发：发送最后一个 ACK 后
-  - 时长：2MSL（避免旧报文干扰）
-  - 问题：短连接场景易端口耗尽
-- CLOSE_WAIT：
-  - 所属方：被动关闭方
-  - 触发：收到对方 FIN 并回复 ACK 后
-  - 时长：无固定值（需应用层调用 close()）
-  - 问题：应用层未关连接会导致资源泄漏
-
-### select、poll、epoll 的区别与原理
-- select：
-  - 底层：位图（fd_set）
-  - 连接上限：FD_SETSIZE（默认 1024）
-  - 效率：O(n)（遍历所有 fd）
-  - 特性：水平触发、每次拷贝 fd 集合、跨平台
-  - 场景：少量连接
-- poll：
-  - 底层：动态数组（pollfd[]）
-  - 连接上限：无（依赖内存）
-  - 效率：O(n)（遍历所有 fd）
-  - 特性：水平触发、每次拷贝数组、跨平台
-  - 场景：中量连接
-- epoll（Linux 特有）：
-  - 底层：红黑树+就绪链表
-  - 连接上限：无（依赖内存）
-  - 效率：O(1)（仅处理就绪 fd）
-  - 特性：水平/边缘触发、仅初始化拷贝、共享 fd
-  - 场景：高并发（万级+）
-
-### Reactor 和 Proactor 模型
-- Reactor（反应堆）：
-  - 核心：被动等事件就绪（I/O 可读/可写）
-  - 操作：事件就绪后应用层主动读写
-  - 依赖：非阻塞 I/O + 事件通知
-  - 特点：易实现、复杂度低
-  - 示例：Nginx（epoll+Reactor）
-- Proactor（前摄器）：
-  - 核心：主动发起 I/O 操作，等完成通知
-  - 操作：内核完成读写后通知应用层
-  - 依赖：异步 I/O + 完成通知
-  - 特点：复杂度高、依赖内核支持
-  - 示例：Windows IOCP
-
