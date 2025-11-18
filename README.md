@@ -45,7 +45,10 @@
 
 ### 阶段0（0.5-1天）
 - **核心目标**：完成环境搭建，能编译运行第一个 C++ 程序，上手基础工具
-- **环境搭建**：Windows（MinGW+VS Code）/ Mac（Xcode Command Line Tools）/ Linux（GCC）
+- **环境搭建**：
+    - Windows：MinGW-w64 / MSVC + VS Code
+    - Mac：Xcode Command Line Tools
+    - Linux：GCC/Clang
 
 ### 阶段 1：入门基础（2-3 周）
 - **核心目标**：理解 C++ 基本语法规则与底层逻辑，实现“输入→处理→输出”规范逻辑，规避入门常见坑
