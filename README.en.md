@@ -102,7 +102,7 @@ Relevant discussions:
 
 ## Core Knowledge
 
-### Basic Syntax
+### [Basic Syntax](https://github.com/0voice/awesome-modern-cpp-2025/blob/main/core_knowledge/%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E7%AF%87.md)
 - **Variables & Data Types**: Integral/floating-point/char/bool, `const`, `typedef`/`using`
 - **Operators & Expressions**: Arithmetic/relational/logical operators, compound assignment, increment/decrement (prefix vs postfix)
 - **Control Flow**: `if-else`, `switch`, `for`/`while`/`do-while`, `break`/`continue`, `cin`/`cout` + `iomanip`, `namespace`
@@ -110,21 +110,21 @@ Relevant discussions:
 - **Arrays & Strings**: One-dimensional arrays, C-style strings vs `std::string` (common operations)
 - **Pointers Basics**: Definition/dereference/address-of, pointer arithmetic, pointers to arrays/functions, dangling/wild pointers, `nullptr`, core differences between pointers and references
 
-### Object-Oriented Programming
+### [Object-Oriented Programming](https://github.com/0voice/awesome-modern-cpp-2025/blob/main/core_knowledge/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%AF%87.md)
 - **Classes & Objects**: `class` vs `struct`, member variables/functions, object creation (stack vs heap), access specifiers (`public`/`private`/`protected`)
 - **Constructors & Destructors**: Default/parameterized/copy/move constructors, move assignment, virtual destructor necessity, initialization lists, RAII principle, introduction to smart pointers, Rule of Five
 - **Inheritance & Polymorphism**: Inheritance syntax, base/derived classes, virtual functions, pure virtual functions + abstract classes, brief introduction to vtable/vptr
 - **Operator Overloading**: Assignment/arithmetic/relational/stream (`<<`/`>>`) operators, deep copy vs shallow copy
 - **Templates Basics**: Function templates, class templates, connection to STL containers
 
-### Intermediate & Modern C++
+### [Intermediate & Modern C++](https://github.com/0voice/awesome-modern-cpp-2025/blob/main/core_knowledge/%E8%BF%9B%E9%98%B6%E5%9F%BA%E7%A1%80%E7%AF%87.md)
 - **STL**: Containers (`vector`, `list`, `map`, `unordered_map`, `set`), iterators & invalidation scenarios, common algorithms (`sort`, `find`, `count`, `for_each`, etc.), lambda with STL
 - **File I/O**: Text/binary file read/write, `fstream`, file stream states, data persistence
 - **Exception Handling**: `try`/`catch`/`throw`, custom exception classes, `noexcept`
 - **Memory Management**: `new`/`delete` vs `malloc`/`free`, smart pointers (`unique_ptr`, `shared_ptr`, `weak_ptr`), avoiding memory leaks and circular references
 - **Modern C++ Features**: `auto`, `decltype`, lambda expressions, `nullptr`, move semantics, `std::move`, perfect forwarding
 
-### Practical & Systems Programming
+### [Practical & Systems Programming](https://github.com/0voice/awesome-modern-cpp-2025/blob/main/core_knowledge/%E5%AE%9E%E6%88%98%E6%8F%90%E5%8D%87%E7%AF%87.md)
 - **Multithreading**: `std::thread`, `mutex`/`lock_guard`/`unique_lock`, `condition_variable`, `std::atomic`, thread pool principle & implementation, deadlock prevention
 - **Network Programming**: TCP/UDP fundamentals, Socket programming workflow (server/client), TCP sticky packet problem, introduction to I/O multiplexing (`select`/`poll`/`epoll`)
 - **Design Patterns**: Thread-safe Singleton, Simple Factory/Factory Method, Strategy pattern (use cases + core code)
