@@ -19,7 +19,7 @@ C++ 环境核心依赖 **编译器**（将代码转为可执行文件）+ **IDE/
    打开 CMD 或 PowerShell，输入 `g++ --version`，若显示版本号（如 `g++ (x86_64-posix-seh-rev0, Built by MinGW-W64 project) 13.2.0`），则安装成功。
 
 #### 步骤 2：安装 VS Code（编辑器）
-1. 下载：https://code.visualstudio.com/（默认安装，勾选“添加到 PATH”）。
+1. 下载：https://code.visualstudio.com/     （默认安装，勾选“添加到 PATH”）。
 2. 安装 C++ 插件：  
    打开 VS Code → 左侧扩展栏 → 搜索安装以下插件：  
    - C/C++（微软官方，核心插件）；  
@@ -56,7 +56,7 @@ C++ 环境核心依赖 **编译器**（将代码转为可执行文件）+ **IDE/
 3. 验证：终端输入 `clang --version`，显示版本号则成功。
 
 #### 步骤 2：安装 VS Code 及插件
-1. 下载 VS Code：https://code.visualstudio.com/（Mac 版 `.dmg` 安装包）；  
+1. 下载 VS Code：https://code.visualstudio.com/   （Mac 版 `.dmg` 安装包）；  
 2. 安装插件：同 Windows 方案 1（C/C++、C/C++ Extension Pack、Code Runner）。
 
 #### 步骤 3：测试程序
@@ -77,7 +77,7 @@ C++ 环境核心依赖 **编译器**（将代码转为可执行文件）+ **IDE/
 3. 验证：`g++ --version`，显示版本号则成功。
 
 #### 步骤 2：安装 VS Code
-1. 下载：https://code.visualstudio.com/，选择 Linux 版（`.deb` 或 `.rpm`）；  
+1. 下载：https://code.visualstudio.com/   选择 Linux 版（`.deb` 或 `.rpm`）；  
 2. 安装：终端进入下载目录，执行 `sudo dpkg -i code_xxx.deb`（xxx 为版本号）；  
 3. 安装插件：同 Windows/Mac 方案（C/C++、C/C++ Extension Pack）。
 
@@ -88,13 +88,13 @@ C++ 环境核心依赖 **编译器**（将代码转为可执行文件）+ **IDE/
 
 ## 四、可选工具安装（Git + CMake，项目开发必备）
 ### 1. Git（版本控制工具）
-- Windows：下载 https://git-scm.com/，默认安装（勾选“添加到 PATH”）；  
+- Windows：下载 https://git-scm.com/    默认安装（勾选“添加到 PATH”）；  
 - Mac：终端输入 `brew install git`（需先安装 Homebrew：`/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`）；  
 - Linux：`sudo apt install git`；  
 - 验证：`git --version`。
 
 ### 2. CMake（跨平台项目构建工具）
-- Windows：下载 https://cmake.org/download/，安装时勾选“Add CMake to system PATH”；  
+- Windows：下载 https://cmake.org/download/  安装时勾选“Add CMake to system PATH”；  
 - Mac：`brew install cmake`；  
 - Linux：`sudo apt install cmake`；  
 - 验证：`cmake --version`。
@@ -108,7 +108,7 @@ C++ 环境核心依赖 **编译器**（将代码转为可执行文件）+ **IDE/
    原因：插件未正确配置。解决方案：打开 `main.cpp` → 按 `Ctrl+Shift+P` → 输入 `C/C++: Edit Configurations (UI)` → 编译器路径选择安装的 `g++` 或 `clang++` 路径。
 
 3. **Mac 安装 Clang 提示“无法连接服务器”**：  
-   原因：网络问题。解决方案：切换网络，或手动下载 Command Line Tools（https://developer.apple.com/download/all/，需苹果账号）。
+   原因：网络问题。解决方案：切换网络，或手动下载 Command Line Tools（https://developer.apple.com/download/all/  需苹果账号）。
 
 4. **Linux 安装 VS Code 提示“依赖缺失”**：  
    解决方案：执行 `sudo apt -f install`，自动修复依赖后重新安装。
