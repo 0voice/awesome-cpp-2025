@@ -154,7 +154,7 @@
 | 书籍名称 | 作者 | 简介 |
 |----------|------|------|
 | 《C++ Primer Plus》（第 6 版） | Stephen Prata | 零基础友好天花板！语言通俗、例子贴近生活，章节从语法基础到面向对象逐步递进，每章配套练习题，适合纯新手稳步入门，避免复杂概念劝退。 |
-| 《C++ Primer》（第 5/6 版） | Stanley B. Lippman 等 | 全面入门圣经，从语法到 STL，强调现代实践。知识点密度高、讲解深入，更适合有一定编程基础后，用来夯实体系或进阶提升，零基础不建议直接上手。 |
+| 《C++ Primer》（第 5/6 版） | Stanley B. Lippman 等 | 	全面系统的 C++ 圣经，从语法到 STL，强调现代实践。知识点密度高、讲解深入，更适合有一定编程基础后，用来夯实体系或进阶提升，零基础不建议直接上手。 |
 | 《Accelerated C++》 | Andrew Koenig & Barbara E. Moo | 项目驱动快速上手，聚焦高效代码，适合有基础初学者。 |
 | 《Programming: Principles and Practice Using C++》（第 2 版） | Bjarne Stroustrup | 原则+实践教材，讲解抽象与算法，适合理解语言哲学者。 |
 | 《Effective C++》（第 3 版） | Scott Meyers | 55 条最佳实践，避免陷阱，提升中级代码质量。 |
