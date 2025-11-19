@@ -113,7 +113,7 @@
 | 第16-18周 | 阶段 5 | 牛客/LeetCode C++ 专区 | 高频笔面题 + 项目复盘 |
 
 ## 核心知识点
-### 基础语法篇
+### [基础语法篇](https://github.com/0voice/awesome-modern-cpp-2025/blob/main/core_knowledge/%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E7%AF%87.md)
   - **变量与数据类型**：整型/浮点型/字符型/布尔型、const、typedef
   - **运算符与表达式**：算术/关系/逻辑运算符、复合赋值、自增自减（前置和后置）
   - **控制流**：if-else、switch、for/while/do-while、break/continue、cin/cout+iomanip、namespace
@@ -121,21 +121,21 @@
   - **数组与字符串**：一维数组、C风格字符串和std::string（常用操作）
   - **指针入门**：定义/解引用/取地址、指针与数组/函数、野指针/nullptr、指针和引用（核心区别）
 
-### 面向对象篇
+### [面向对象篇](https://github.com/0voice/awesome-modern-cpp-2025/blob/main/core_knowledge/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%AF%87.md)
   - **类与对象**：class/struct区别、成员变量/函数、对象创建（栈/堆）、访问控制（public/private/protected）
   - **构造与析构**：默认/带参/拷贝/移动构造与移动赋值、析构函数（虚析构必要性）、初始化列表、RAII原则、智能指针初步认识、Rule of Five
   - **继承与多态**：继承语法、基类/派生类、虚函数、纯虚函数+抽象类、vtable简介
   - **运算符重载**：赋值/算术/关系/<<运算符、深拷贝和浅拷贝
   - **模板基础**：函数模板、类模板、STL容器底层关联
 
-### 进阶基础篇
+### [进阶基础篇](https://github.com/0voice/awesome-modern-cpp-2025/blob/main/core_knowledge/%E8%BF%9B%E9%98%B6%E5%9F%BA%E7%A1%80%E7%AF%87.md)
   - **STL**：容器（vector/list/map/unordered_map/set）、迭代器（失效场景）、常用算法（sort/find/count/for_each）、lambda配合STL
   - **文件IO**：文本/二进制文件读写、fstream、文件指针操作、数据持久化
   - **异常处理**：try-catch/throw、自定义异常类、noexcept
   - **内存管理**：new/delete、malloc/free区别、智能指针（unique_ptr/shared_ptr/weak_ptr）、内存泄漏避免
   - **现代特性**：auto、decltype、lambda
 
-### 实战提升篇
+### [实战提升篇](https://github.com/0voice/awesome-modern-cpp-2025/blob/main/core_knowledge/%E5%AE%9E%E6%88%98%E6%8F%90%E5%8D%87%E7%AF%87.md)
   - **多线程**：std::thread、mutex/lock_guard、condition_variable、atomic、线程池原理、死锁避免
   - **网络编程**：TCP/UDP基础、Socket编程流程（服务端/客户端）、TCP粘包问题、IO多路复用简介
   - **设计模式**：单例（线程安全版）、简单工厂/工厂方法、策略模式（适用场景+核心代码）
