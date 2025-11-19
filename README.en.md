@@ -38,7 +38,10 @@ Relevant discussions:
 
 ### Stage 0: Preparation (0.5–1 day)
 **Goal**: Set up environment, compile and run your first C++ program  
-- Windows (MinGW + VS Code) / macOS (Xcode Command Line Tools) / Linux (GCC/Clang)
+- Windows (MinGW + VS Code)
+- macOS (Xcode Command Line Tools)
+- Linux (GCC/Clang)
+If you haven't completed this step or encounter any difficulties, please refer to the [C++ Development Environment Setup Guide](https://github.com/0voice/awesome-modern-cpp-2025/blob/main/environment_setup/README.md).
 
 ### Stage 1: Fundamentals (2–3 weeks)
 **Goal**: Master basic syntax, understand compilation process, avoid common pitfalls  
