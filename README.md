@@ -1,7 +1,20 @@
 # C++ 零基础入门到面试通关：2025 一站式学习指南
+
 🌟 本仓库旨在为学习 C++ 的程序员们提供学习资源导航
 
 💡 涵盖从基础知识到实战项目的资料与示例，帮助你快速入门并逐步进阶！
+<p>
+  <a href="https://github.com/0voice/awesome-modern-cpp-2025/stargazers">
+    <img src="https://img.shields.io/github/stars/0voice/awesome-modern-cpp-2025?color=ffcb47&label=%E2%AD%90%20Stars&style=for-the-badge" alt="Stars"/>
+  </a>
+  <a href="https://github.com/0voice/awesome-modern-cpp-2025/fork">
+    <img src="https://img.shields.io/github/forks/0voice/awesome-modern-cpp-2025?color=34d058&label=%F0%9F%8D%B4%20Forks&style=for-the-badge" alt="Forks"/>
+  </a>
+  <a href="https://github.com/0voice/awesome-modern-cpp-2025/watchers">
+    <img src="https://img.shields.io/github/watchers/0voice/awesome-modern-cpp-2025?color=8b46ff&label=%F0%9F%94%94%20Watch&style=for-the-badge" alt="Watchers"/>
+  </a>
+</p>
+
 
 [English README](https://github.com/0voice/awesome-modern-cpp-2025/blob/main/README.en.md)
 ## 适用人群
