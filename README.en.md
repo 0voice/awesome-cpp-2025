@@ -1,6 +1,18 @@
-# C++ Zero to Interview 2025: All-in-One Guide
+# Awesome Modern C++ 2025
 🌟 A one-stop navigation repository for anyone learning modern C++.  
 💡 From absolute beginner to building real projects and passing technical interviews.  
+<p>
+  <a href="https://github.com/0voice/awesome-modern-cpp-2025/stargazers">
+    <img src="https://img.shields.io/github/stars/0voice/awesome-modern-cpp-2025?color=ffcb47&label=%E2%AD%90%20Stars&style=for-the-badge" alt="Stars"/>
+  </a>
+  <a href="https://github.com/0voice/awesome-modern-cpp-2025/fork">
+    <img src="https://img.shields.io/github/forks/0voice/awesome-modern-cpp-2025?color=34d058&label=%F0%9F%8D%B4%20Forks&style=for-the-badge" alt="Forks"/>
+  </a>
+  <a href="https://github.com/0voice/awesome-modern-cpp-2025/watchers">
+    <img src="https://img.shields.io/github/watchers/0voice/awesome-modern-cpp-2025?color=8b46ff&label=%F0%9F%94%94%20Watch&style=for-the-badge" alt="Watchers"/>
+  </a>
+</p>
+
 [中文版 README](https://github.com/0voice/awesome-modern-cpp-2025/blob/main/README.md)
 
 **Target Audience**
