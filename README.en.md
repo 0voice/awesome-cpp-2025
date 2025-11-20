@@ -52,7 +52,7 @@ If you haven't completed this step or encounter any difficulties, please refer t
 - Compilation & linking, header guards
 - CMake basics (multi-file projects)
 
-**Output**: Calculator, Guess-the-number, Simple contact book (array version)
+**Project**: [Calculator](https://github.com/arash28134/simple-calculator), [Guess-the-number](https://github.com/mrnazu/guess-the-number)
 
 ### Stage 2: Core OOP (3–4 weeks)
 **Goal**: Design clean classes and understand polymorphism  
@@ -62,7 +62,7 @@ If you haven't completed this step or encounter any difficulties, please refer t
 3. Inheritance, virtual functions, vtable
 4. static members, friend, basic templates
 
-**Project**: Student / Library management system (full deep-copy support)
+**Project**: [Student management system](https://github.com/abhiishekpanchal/STUDENT-MANAGEMENT-SYSTEM---OOPS-CONCEPTS) / [Library management system](https://github.com/MAbubakkar/Library-Management-System) 
 
 ### Stage 3: Modern C++ & STL (2–3 weeks)
 **Goal**: Write idiomatic, efficient code  
@@ -72,7 +72,7 @@ If you haven't completed this step or encounter any difficulties, please refer t
 - Lambda, auto, range-for, smart pointers
 - Exception handling, file I/O
 
-**Project**: High-performance word frequency tool, simple logger
+**Project**: [High-performance word frequency tool](https://github.com/NimraGJay/STL), [Simple logger](https://github.com/Ahmed-Ibrahim-30/Logging-System)
 
 ### Stage 4: Systems Programming (4–6 weeks)
 **Goal**: Build real production-grade components  
@@ -84,9 +84,9 @@ If you haven't completed this step or encounter any difficulties, please refer t
 - Design patterns, debugging & profiling
 
 **Major Project (choose one)**
-- High-performance thread pool
-- Minimal HTTP server with thread pool
-- 2D game (Snake / Pong) using SFML or raylib
+- [High-Performance Thread Pool](https://github.com/progschj/ThreadPool)
+- [Lightweight HTTP Server with Thread Pool](https://github.com/yhirose/cpp-httplib)
+- [High-Performance Chat Server](https://github.com/chronoxor/CppServer)
 
 ### Stage 5: Interview Sprint (2–3 weeks)
 **Goal**: Pass technical interviews confidently  
