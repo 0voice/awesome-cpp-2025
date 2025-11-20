@@ -52,7 +52,7 @@
 - 编译与链接、头文件保护机制
 - CMake 基础（多文件项目）
 
-**实战项目**：计算器、猜数字游戏、简易通讯录（数组版）
+**实战项目**：[计算器](https://github.com/arash28134/simple-calculator)、[猜数字](https://github.com/LargeRaindrop/NumberGuess)、简易通讯录（数组版）
 
 ### 阶段 2：OOP 核心（3–4 周）
 **目标**：设计规范类，理解多态机制  
@@ -62,7 +62,7 @@
 3. 继承、虚函数、虚函数表（vtable）
 4. 静态成员、友元、模板基础
 
-**实战项目**：学生/图书管理系统（完整支持深拷贝）
+**实战项目**：[学生管理系统](https://github.com/abhiishekpanchal/STUDENT-MANAGEMENT-SYSTEM---OOPS-CONCEPTS)/[图书管理系统](https://github.com/MAbubakkar/Library-Management-System    )
 
 ### 阶段 3：现代 C++ 与 STL（2–3 周）
 **目标**：编写地道、高效的代码  
@@ -72,7 +72,7 @@
 - Lambda 表达式、auto、范围 for、智能指针
 - 异常处理、文件 IO
 
-**实战项目**：高性能词频统计工具、简易日志系统
+**实战项目**：[高性能词频统计工具](https://github.com/NimraGJay/STL)、[简易日志系统](https://github.com/Ahmed-Ibrahim-30/Logging-System)
 
 ### 阶段 4：系统编程（4–6 周）
 **目标**：开发生产级核心组件  
@@ -80,13 +80,13 @@
 - RAII 与智能指针深度解析
 - 多线程编程（std::thread、互斥锁、条件变量、原子操作）
 - 线程池实现
-- Socket 编程（TCP/UDP）、简易 HTTP 服务器
+- Socket 编程（TCP/UDP）
 - 设计模式、调试与性能分析
 
-**重点项目（任选其一）**
-- 高性能线程池
-- 带线程池的轻量 HTTP 服务器
-- 2D 游戏（贪吃蛇 / 乒乓球）（基于 SFML 或 raylib）
+**重点项目**
+- [高性能线程池](https://github.com/progschj/ThreadPool)
+- [带线程池的轻量 HTTP 服务器](https://github.com/yhirose/cpp-httplib)
+- [高性能聊天服务器](https://github.com/chronoxor/CppServer)
 
 ### 阶段 5：面试冲刺（2–3 周）
 **目标**：自信应对技术面试  
