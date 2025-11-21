@@ -40,6 +40,7 @@
 - [学习路线](#学习路线)
 - [核心知识点](#核心知识点)
 - [C++现代特性进阶](#c-现代特性进阶c20--c23)
+- [Linux环境下开发C++](https://github.com/0voice/awesome-modern-cpp-2025/tree/main/cpp-on-linux)
 - [推荐资源](#推荐资源)
 - [常用工具](#常用工具)
 - [应用方向](#应用方向)
