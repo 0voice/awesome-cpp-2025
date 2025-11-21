@@ -451,7 +451,7 @@ auto attributed = [] [[nodiscard]] (int x) { return x * x; };
 | [RobLoach/raylib-cpp](https://github.com/RobLoach/raylib-cpp)   | ★★☆☆☆     | 极简游戏开发库                             |
 | [TheCherno/Hazel](https://github.com/TheCherno/Hazel)           | ★★★★☆     | 从零写游戏引擎（教学级）                   |
 | [godotengine/godot](https://github.com/godotengine/godot)      | ★★★★☆     | 完整开源引擎                               |
-| [cocos2d/cocos-engine](https://github.com/cocos2d/cocos-engine)| ★★★★☆     | 国内手游最强引擎                           |
+| [cocos2d/cocos-engine](https://github.com/cocos/cocos-engine)| ★★★★☆     | 国内手游最强引擎                           |
 
 ### 音视频/流媒体开发
 | 项目名称                                                         | 难度       | 核心技能                                   |
