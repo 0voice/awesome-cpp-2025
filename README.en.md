@@ -38,6 +38,7 @@ Relevant discussions:
 ## Table of Contents
 - [Learning Roadmap](#learning-roadmap)
 - [Core Knowledge](#core-knowledge)
+- [Advanced Modern C++ Features](advanced-modern-c-features-c20--c23)
 - [Recommended Resources](#recommended-resources)
 - [Tools](#tools)
 - [Application Fields](#application-fields)
@@ -144,6 +145,186 @@ If you haven't completed this step or encounter any difficulties, please refer t
 - **Multithreading**: `std::thread`, `mutex`/`lock_guard`/`unique_lock`, `condition_variable`, `std::atomic`, thread pool principle & implementation, deadlock prevention
 - **Network Programming**: TCP/UDP fundamentals, Socket programming workflow (server/client), TCP sticky packet problem, introduction to I/O multiplexing (`select`/`poll`/`epoll`)
 - **Design Patterns**: Thread-safe Singleton, Simple Factory/Factory Method, Strategy pattern (use cases + core code)
+
+## Advanced Modern C++ Features (C++20 & C++23)
+
+### 1. Concepts and requires (C++20)
+**Purpose**: Add clear, readable constraints to template parameters, replacing complex SFINAE.  
+**When to use**: Mandatory for all generic libraries and custom template functions/classes.
+
+```cpp
+template<typename T>
+concept Integral = std::is_integral_v<T>;
+
+template<Integral T>
+T add(T a, T b) { return a + b; }
+
+// Custom complex concept
+template<typename T>
+concept Hashable = requires(T x) {
+    { std::hash<T>{}(x) } -> std::convertible_to<std::size_t>;
+};
+
+template<Hashable T>
+class Cache { /* ... */ };
+```
+
+**Common pitfall**: Overly strict concepts may break valid code.  
+**Recommendation**: Start with loose constraints and tighten gradually.
+
+---
+
+### 2. Ranges Library (C++20)
+**Purpose**: Functional-style sequence processing with lazy evaluation and pipe syntax, making code more concise and efficient.  
+**When to use**: Anytime filter/map/take/drop/sort operations are needed.  
+**Advantages**: No intermediate containers, cache-friendly, 50% less code.
+
+```cpp
+std::vector<int> v = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+
+auto result = v
+    | std::views::filter([](int x) { return x % 2 == 0; })   // Even numbers
+    | std::views::transform([](int x) { return x * x; })     // Square
+    | std::views::take(4);                                   // First 4 elements
+
+for (int x : result) std::cout << x << ' ';  // Output: 4 16 36 64
+```
+
+---
+
+### 3. std::span (C++20)
+**Purpose**: Lightweight, non-owning view of fixed-size arrays/containers for safe continuous data passing.  
+**When to use**: Replace raw pointers/size pairs with span for all "continuous memory" function parameters.
+
+```cpp
+void process(std::span<const int> data) {
+    for (int x : data) std::cout << x << ' ';
+}
+
+std::vector<int> vec{1, 2, 3};
+int arr[] = {4, 5, 6};
+process(vec);
+process(arr);
+```
+
+**Common mistake**: Span stores a view - dangling occurs if the original data is destructed.  
+**Note**: Ensure the original data outlives the span.
+
+---
+
+### 4. Coroutines (C++20)
+**Purpose**: Write asynchronous/generator code more naturally without callbacks or threads.
+
+```cpp
+#include <coroutine>
+#include <iostream>
+
+struct Generator {
+    struct promise_type {
+        int current_value;
+        std::suspend_always yield_value(int value) {
+            current_value = value;
+            return {};
+        }
+        std::suspend_always initial_suspend() { return {}; }
+        std::suspend_always final_suspend() noexcept { return {}; }
+        Generator get_return_object() { return {}; }
+        void return_void() {}
+        void unhandled_exception() {}
+    };
+    bool next() { /* Practical use requires a coroutine library */ return false; }
+    int value() { return 0; }
+};
+```
+
+---
+
+### 5. deducing this (C++23)
+**Purpose**: Allow member functions to treat `this` as a regular parameter, perfectly solving pain points in CRTP and recursive lambdas.
+
+```cpp
+struct Node {
+    Node* left = nullptr;
+    Node* right = nullptr;
+
+    int height(this Node const& self) {
+        if (!self.left && !self.right) return 1;
+        int l = self.left ? self.left->height() : 0;
+        int r = self.right ? self.right->height() : 0;
+        return 1 + std::max(l, r);
+    }
+};
+```
+
+---
+
+### 6. std::expected (C++23)
+**Purpose**: Modern return type that carries either a value or an error message, lighter than exceptions and return-code pairs.  
+**Use cases**: All operations that may fail but don't warrant exceptions (parsing, I/O, calculations, etc.).
+
+```cpp
+std::expected<int, std::string> safe_divide(int a, int b) {
+    if (b == 0) return std::unexpected("division by zero");
+    return a / b;
+}
+
+auto result = safe_divide(42, 7)
+                .and_then([](int x) { return safe_divide(100, x); })
+                .value_or(-1);
+```
+
+---
+
+### 7. std::mdspan (C++23)
+**Purpose**: Non-owning multi-dimensional array view, ideal for images, matrices, and scientific computing scenarios.
+
+```cpp
+#include <mdspan>
+
+void print(std::mdspan<const int, std::dextents<size_t, 2>> matrix) {
+    for (size_t i = 0; i < matrix.extent(0); ++i) {
+        for (size_t j = 0; j < matrix.extent(1); ++j)
+            std::cout << matrix(i, j) << ' ';
+        std::cout << '\n';
+    }
+}
+```
+
+---
+
+### 8. std::flat_map / std::flat_set (C++23)
+**Purpose**: Ordered map/set based on contiguous containers, offering better cache locality and faster lookup speeds.  
+**When to use**: Replace `std::map` with `std::flat_map` for configuration tables, dictionaries, and frequently accessed small datasets (< 100,000 entries).
+
+```cpp
+std::flat_map<std::string, int> m = {
+    {"apple", 5}, {"banana", 3}, {"orange", 8}
+};
+// Automatically sorted, contiguous memory, ideal for hot data.
+```
+
+---
+
+### 9. Multi-dimensional subscript operator[] (C++23)
+**Purpose**: Natively support multi-dimensional array subscript operations with intuitive syntax.
+
+```cpp
+int arr[3][4][5]{};
+arr[1, 2, 3] = 42;        // Equivalent to arr[1][2][3] = 42;
+```
+
+---
+
+### 10. Lambda Enhancements (C++23)
+**Purpose**: Support template parameters and attribute markers for stronger expressiveness.
+
+```cpp
+auto templated_lambda = []<typename T>(T a, T b) {
+    return a + b;
+};
+
+auto attributed = [] [[nodiscard]] (int x) { return x * x; };
+```
 
 ## Recommended Resources
 
