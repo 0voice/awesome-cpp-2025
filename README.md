@@ -358,58 +358,94 @@ auto attributed = [] [[nodiscard]] (int x) { return x * x; };
 | [GitHub Awesome C++](https://github.com/fffaraz/awesome-cpp) | 精选C++开源资源列表，包括框架、库、书籍和工具，助力深入探索生态系统。 |
 
 ## 常用工具
+
 ### 1. 编译器
 - [GCC](https://gcc.gnu.org/)：开源、跨平台
 - [Clang/LLVM](https://clang.llvm.org/)：现代编译器，诊断优秀
-- [MSVC](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170)：Windows 原生
+- [MSVC](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist)：Windows原生
+- [MinGW-w64](https://www.mingw-w64.org/)：Windows上跑GCC
+- [Intel oneAPI DPC++/C++ Compiler](https://www.intel.com/content/www/us/en/developer/tools/oneapi/dpc-compiler.html)：AVX-512 向量化神器
+- [Emscripten](https://emscripten.org/)：C++ 编译到 WebAssembly
 
 ### 2. 集成开发环境
-- [Visual Studio](https://visualstudio.microsoft.com/)：全功能 IDE
-- [CLion](https://www.jetbrains.com/clion/)：智能 IDE
-- [VSCode](https://code.visualstudio.com/)：轻量编辑器
-- [Code::Blocks](http://www.codeblocks.org/)：免费开源
-- [Dev-C++](https://www.dev-cpp.com/)：轻量简单
+- [Visual Studio](https://visualstudio.microsoft.com/)：Windows 全家桶
+- [CLion](https://www.jetbrains.com/clion/)：JetBrains系最强C++ IDE
+- [VSCode + C++ 插件](https://code.visualstudio.com/)：轻量神器
+- [Qt Creator](https://www.qt.io/product/development-tools)：Qt官方IDE
+- [Visual Studio Code + CMake Tools + clangd](https://code.visualstudio.com/)：2025年最流行组合
+- [Codelite](https://codelite.org/)：免费开源替代
+- [Cevelop](https://www.cevelop.com/)：Eclipse CDT的现代化分支
 
 ### 3. 构建系统
-- [CMake](https://cmake.org/)：跨平台构建
-- [Make](https://www.gnu.org/software/make/)：经典 Unix 工具
-- [Ninja](https://ninja-build.org/)：快速构建
+- [CMake](https://cmake.org/)：事实标准
+- [Meson](https://mesonbuild.com/)：比CMake 更快、更简洁（2025 增长最猛）
+- [Ninja](https://ninja-build.org/)：极速构建后端
+- [Bazel](https://bazel.build/)：Google出品，大型仓库神器
+- [xmake](https://xmake.io/)：国产现代构建，Lua配置超爽
+- [Premake](https://premake.github.io/)：轻量跨平台生成器
 
-### 4. 调试器
-- [GDB](https://sourceware.org/gdb/)：开源调试
-- [LLDB](https://lldb.llvm.org/)：LLVM 调试
+### 4. 调试器 & 性能分析
+- [GDB](https://sourceware.org/gdb/) / [LLDB](https://lldb.llvm.org/)
+- [WinDbg](https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/)：Windows 内核调试
+- [Tracy Profiler](https://github.com/wolfpld/tracy)：2025最火帧级性能分析神器
+- [Perfetto](https://perfetto.dev/)：Google出品系统级追踪
+- [Valgrind](https://valgrind.org/) + [AddressSanitizer](https://clang.llvm.org/docs/AddressSanitizer.html)：内存错误检测
+- [RenderDoc](https://renderdoc.org/)：图形调试神器（Vulkan/DX/OpenGL）
 
-### 5. 版本控制
-- [Git](https://git-scm.com/)：分布式控制
+### 5. 包管理器
+- [vcpkg](https://vcpkg.io/)：微软官方，VS集成最丝滑
+- [Conan 2.x](https://conan.io/)：最成熟的C++包管理
+- [cppan](https://cppan.org/)：老牌但仍可用
+- [Hunter](https://github.com/cpp-pm/hunter)：CMake 原生集成
+- [Buckaroo](https://buckaroo.pm/)：新兴选手
 
-### 6. 包管理器
-- [vcpkg](https://vcpkg.io/)：Microsoft 库管理
-- [Conan](https://conan.io/)：开源包管理
+### 6. 代码分析与测试
+- [Clang-Tidy](https://clang.llvm.org/extra/clang-tidy/)：官方静态分析
+- [Cppcheck](https://cppcheck.net/)：轻量 bug 检测
+- [PVS-Studio](https://pvs-studio.com/)：工业级静态分析（免费给开源）
+- [Google Test](https://github.com/google/googletest) / [Catch2](https://github.com/catchorg/Catch2)
+- [doctest](https://github.com/doctest/doctest)：单头文件测试框架，最轻量
+- [ApprovalTests.cpp](https://github.com/approvals/ApprovalTests.cpp)：黄金输出测试法
 
-### 7. 代码分析与测试
-- [Clang-Tidy](https://clang.llvm.org/extra/clang-tidy/)：静态分析
-- [Cppcheck](https://cppcheck.sourceforge.net/)：检测 bug
-- [Google Test](https://github.com/google/googletest)：单元测试
-- [Catch2](https://github.com/catchorg/Catch2)：轻量测试
+### 7. 代码格式化 & 重构
+- [clang-format](https://clang.llvm.org/docs/ClangFormat.html)：行业标准
+- [uncrustify](https://github.com/uncrustify/uncrustify)：高度可配置
+- [astyle](http://astyle.sourceforge.net/)：老牌格式化工具
+- [Sourcery](https://sourcery.ai/)（付费）：AI 驱动重构建议
 
-### 8. 开发辅助
-- [Clang-Format](https://clang.llvm.org/docs/ClangFormat.html)：代码格式化
-- [Valgrind](https://valgrind.org/)：内存检测
-- [Perf](https://perfwiki.github.io/main/)：性能分析
-- [Docker](https://www.docker.com/)：容器部署
+### 8. 内存与性能检测
+- [Valgrind](https://valgrind.org/)
+- [Address/Memory/Thread Sanitizer](https://clang.llvm.org/docs/)：Clang 自带
+- [gperftools](https://github.com/gperftools/gperftools)：CPU/Memory Profiler
+- [tcmalloc](https://github.com/google/tcmalloc)：高性能内存分配器
+
+### 9. 文档生成 & 可视化
+- [Doxygen](https://www.doxygen.nl/)：代码文档生成
+- [Sphinx + Breathe](https://www.sphinx-doc.org/)：现代文档系统
+- [Graphviz](https://graphviz.org/)：类图/调用图可视化
+
+### 10. 开发辅助
+- [Git](https://git-scm.com/) + [GitKraken](https://www.gitkraken.com/) / [Fork](https://git-fork.com/)
+- [Docker](https://www.docker.com/)：环境隔离
+- [CMake GUI / ccmake](https://cmake.org/cmake/gui/)：可视化配置
+- [Ninja + ccache](https://ccache.dev/)：编译提速 5–10 倍
+- [include-what-you-use](https://include-what-you-use.org/)：头文件依赖分析
+- [cpplint](https://github.com/cpplint/cpplint)：Google 风格检查
+- [GitHub Copilot / Codeium / Tabnine](https://github.com/features/copilot)：AI 补全（2025 年标配）
+
+这样一套工具链装完，从写代码 → 编译 → 调试 → 性能分析 → 部署 → CI/CD 全流程无死角，面试被问“你的开发环境怎么搭的？”直接甩这张表，面试官当场跪了。
 
 ## 应用方向
-
 | 应用方向 | 核心场景 | 推荐框架/库 |
 |----------|----------|-------------|
-| **桌面应用开发** | 办公软件、工业控制界面、桌面工具、设计类软件 |  [Qt](https://www.qt.io/)：跨平台全栈框架，集成 GUI、网络、数据库、多媒体。<br> [MFC](https://learn.microsoft.com/en-us/cpp/mfc/mfc-desktop-applications)：Windows 原生框架，适合 legacy 项目。<br> [wxWidgets](https://www.wxwidgets.org/)：跨平台轻量框架，原生风格。 |
-| **嵌入式开发** | 车载中控、智能家居面板、医疗设备、工业控制器、路由器固件 |  [Qt Embedded](https://www.qt.io/qt-for-embedded-linux)：嵌入式 GUI，适配 ARM 等。<br> [FreeRTOS](https://www.freertos.org/)：轻量 RTOS，资源受限设备。<br> [Yocto/Buildroot](https://www.yoctoproject.org/)：Linux 嵌入式系统。 |
-| **后端/服务器开发** | 分布式系统、API 网关、数据库内核、高并发服务（游戏服务器、支付系统） |  [Boost.Asio](https://www.boost.org/doc/libs/1_85_0/doc/html/boost_asio.html)：异步网络库，TCP/UDP/HTTP。<br> [Muduo](https://github.com/chenshuo/muduo)：Reactor 模式高并发服务器。<br> [Brpc](https://github.com/apache/incubator-brpc)：RPC 框架，多协议支持。<br> [Drogon](https://drogon.org/)：HTTP 框架，异步 IO + ORM。 |
-| **游戏开发** | 3A 游戏客户端、游戏引擎、游戏服务器、独立游戏 |  [Unreal Engine](https://www.unrealengine.com/)：开源引擎，蓝图系统 + C++。<br> [Cocos2d-x](https://www.cocos.com/en/cocos2d-x)：跨平台 2D 引擎。<br> [Unity](https://unity.com/)：C# 上层 + C++ 优化。 |
-| **音视频/流媒体开发** | 播放器、直播推流/拉流、视频编辑、音视频转码、监控安防 |  [FFmpeg](https://ffmpeg.org/)：音视频处理库，解码/编码/传输。<br> [GStreamer](https://gstreamer.freedesktop.org/)：流媒体管道框架。<br> [SDL](https://www.libsdl.org/)：多媒体库，音频/渲染。<br> [OpenCV](https://opencv.org/)：视频分析（如人脸识别）。 |
-| **人工智能/机器学习** | 深度学习框架底层、模型推理优化、高性能计算（HPC） |  [TensorFlow C++ API](https://www.tensorflow.org/api_docs/cc)：模型部署接口。<br> [LibTorch (PyTorch C++)](https://pytorch.org/cppdocs/)：动态图推理库。<br> [OpenCV](https://opencv.org/)：图像预处理/特征提取。<br> [Eigen](http://eigen.tuxfamily.org/)：矩阵运算库。<br> [ONNX Runtime](https://onnxruntime.ai/)：跨框架推理引擎。 |
-| **系统编程/内核开发** | 操作系统内核、驱动程序、数据库内核、文件系统 |  [Linux Kernel](https://www.kernel.org/)：内核 API 开发。<br> [WDF/KMDF](https://learn.microsoft.com/en-us/windows-hardware/drivers/wdf/)：Windows 驱动框架。<br> [SQLite](https://www.sqlite.org/)：嵌入式数据库内核。 |
-| **金融科技/高频交易** | 高频交易系统、量化交易引擎、金融风控系统（要求低延迟、高可靠） |  [QuickFIX](http://www.quickfixengine.org/)：FIX 协议库。<br> [Boost.Asio](https://www.boost.org/)：低延迟网络。 |
+| **桌面应用开发** | 办公软件、工业控制界面、桌面工具、设计类软件 | [Qt](https://www.qt.io/)：跨平台全栈框架，集成 GUI、网络、数据库、多媒体。<br>[MFC](https://learn.microsoft.com/en-us/cpp/mfc/mfc-desktop-applications)：Windows 原生框架，适合 legacy 项目。<br>[wxWidgets](https://www.wxwidgets.org/)：跨平台轻量框架，原生风格。<br>[FLTK](http://www.fltk.org/)：快速轻量跨平台GUI工具包。<grok-card data-id="d9a22e" data-type="citation_card"></grok-card><br>[ImGui](https://github.com/ocornut/imgui)：立即模式GUI，最小依赖。<grok-card data-id="bcdc99" data-type="citation_card"></grok-card><br>[JUCE](https://juce.com/)：跨平台软件开发全包类库。<grok-card data-id="cada29" data-type="citation_card"></grok-card> |
+| **嵌入式开发** | 车载中控、智能家居面板、医疗设备、工业控制器、路由器固件 | [Qt Embedded](https://www.qt.io/qt-for-embedded-linux)：嵌入式 GUI，适配 ARM 等。<br>[FreeRTOS](https://www.freertos.org/)：轻量 RTOS，资源受限设备。<br>[Yocto/Buildroot](https://www.yoctoproject.org/)：Linux 嵌入式系统。<br>[ETL](https://github.com/ETLCPP/etl)：嵌入式模板库，无标准库依赖。<grok-card data-id="8a2a21" data-type="citation_card"></grok-card><br>[tbox](https://github.com/tboox/tbox)：多平台 glib-like 库。<grok-card data-id="a647e0" data-type="citation_card"></grok-card><br>[lwIP](https://savannah.nongnu.org/projects/lwip/)：轻量TCP/IP栈。<grok-card data-id="a9bbf3" data-type="citation_card"></grok-card><br>[DPDK](https://www.dpdk.org/)：快速数据包处理库。<grok-card data-id="1305db" data-type="citation_card"></grok-card> |
+| **后端/服务器开发** | 分布式系统、API 网关、数据库内核、高并发服务（游戏服务器、支付系统） | [Boost.Asio](https://www.boost.org/doc/libs/1_85_0/doc/html/boost_asio.html)：异步网络库，TCP/UDP/HTTP。<br>[Muduo](https://github.com/chenshuo/muduo)：Reactor 模式高并发服务器。<br>[Brpc](https://github.com/apache/incubator-brpc)：RPC 框架，多协议支持。<br>[Drogon](https://drogon.org/)：HTTP 框架，异步 IO + ORM。<br>[Seastar](https://seastar.io/)：高性能服务器框架，无锁设计。<grok-card data-id="fa5784" data-type="citation_card"></grok-card><br>[Folly](https://github.com/facebook/folly)：Facebook高性能C++库。<grok-card data-id="bb5131" data-type="citation_card"></grok-card><br>[Crow](https://crowcpp.org/)：微型Web框架，类似Flask。<grok-card data-id="d76a5f" data-type="citation_card"></grok-card> |
+| **游戏开发** | 3A 游戏客户端、游戏引擎、游戏服务器、独立游戏 | [Unreal Engine](https://www.unrealengine.com/)：开源引擎，蓝图系统 + C++。<br>[Cocos2d-x](https://www.cocos.com/en/cocos2d-x)：跨平台 2D 引擎。<br>[Unity](https://unity.com/)：C# 上层 + C++ 优化。<br>[raylib](https://www.raylib.com/)：简单易用游戏编程库。<grok-card data-id="bedc09" data-type="citation_card"></grok-card><br>[SFML](https://www.sfml-dev.org/)：简单快速多媒体库。<grok-card data-id="df0e06" data-type="citation_card"></grok-card><br>[SDL2](https://www.libsdl.org/)：多媒体访问层。<grok-card data-id="354a80" data-type="citation_card"></grok-card><br>[EnTT](https://github.com/skypjack/entt)：现代C++ ECS框架。<grok-card data-id="deaa51" data-type="citation_card"></grok-card> |
+| **音视频/流媒体开发** | 播放器、直播推流/拉流、视频编辑、音视频转码、监控安防 | [FFmpeg](https://ffmpeg.org/)：音视频处理库，解码/编码/传输。<br>[GStreamer](https://gstreamer.freedesktop.org/)：流媒体管道框架。<br>[SDL](https://www.libsdl.org/)：多媒体库，音频/渲染。<br>[OpenCV](https://opencv.org/)：视频分析（如人脸识别）。<br>[PortAudio](http://www.portaudio.com/)：跨平台音频I/O。<grok-card data-id="b5c9b8" data-type="citation_card"></grok-card><br>[miniaudio](https://miniaud.io/)：单文件音频库。<grok-card data-id="dd680d" data-type="citation_card"></grok-card><br>[libav](https://libav.org/)：多媒体处理工具集。<grok-card data-id="042a7d" data-type="citation_card"></grok-card> |
+| **人工智能/机器学习** | 深度学习框架底层、模型推理优化、高性能计算（HPC） | [TensorFlow C++ API](https://www.tensorflow.org/api_docs/cc)：模型部署接口。<br>[LibTorch (PyTorch C++)](https://pytorch.org/cppdocs/)：动态图推理库。<br>[OpenCV](https://opencv.org/)：图像预处理/特征提取。<br>[Eigen](http://eigen.tuxfamily.org/)：矩阵运算库。<br>[ONNX Runtime](https://onnxruntime.ai/)：跨框架推理引擎。<br>[Dlib](https://dlib.net/)：机器学习工具包。<grok-card data-id="07ef52" data-type="citation_card"></grok-card><br>[ncnn](https://github.com/Tencent/ncnn)：移动端神经网络推理。<grok-card data-id="68c7cd" data-type="citation_card"></grok-card><br>[mlpack](https://mlpack.org/)：可扩展ML库。<grok-card data-id="fc1fd6" data-type="citation_card"></grok-card> |
+| **系统编程/内核开发** | 操作系统内核、驱动程序、数据库内核、文件系统 | [Linux Kernel](https://www.kernel.org/)：内核 API 开发。<br>[WDF/KMDF](https://learn.microsoft.com/en-us/windows-hardware/drivers/wdf/)：Windows 驱动框架。<br>[SQLite](https://www.sqlite.org/)：嵌入式数据库内核。<br>[Boost](https://www.boost.org/)：通用C++库集合。<grok-card data-id="c5a377" data-type="citation_card"></grok-card><br>[Abseil](https://abseil.io/)：Google C++基础库。<grok-card data-id="773214" data-type="citation_card"></grok-card><br>[jemalloc](https://jemalloc.net/)：高性能内存分配器。<grok-card data-id="087a32" data-type="citation_card"></grok-card> |
+| **金融科技/高频交易** | 高频交易系统、量化交易引擎、金融风控系统（要求低延迟、高可靠） | [QuickFIX](http://www.quickfixengine.org/)：FIX 协议库。<br>[Boost.Asio](https://www.boost.org/)：低延迟网络。<br>[QuantLib](https://www.quantlib.org/)：量化金融开源库。<grok-card data-id="ffb7ea" data-type="citation_card"></grok-card> |
 
 ## 实战项目
 ### 桌面应用开发
@@ -421,6 +457,12 @@ auto attributed = [] [[nodiscard]] (int x) { return x * x; };
 | [jurplel/qmc-decode-gui](https://github.com/jurplel/qmc-decode-gui) | ★★☆☆☆ | Qt 实用工具、跨平台打包                    |
 | [flameshot-org/flameshot](https://github.com/flameshot-org/flameshot) | ★★★☆☆ | 截图工具、Qt + 图像处理                     |
 | [deskflow/deskflow](https://github.com/debauchee/barrier)      | ★★★★☆     | 多设备鼠标共享、跨平台网络                 |
+| [wxWidgets/wxWidgets](https://github.com/wxWidgets/wxWidgets) | ★★★☆☆ | 跨平台桌面GUI框架、原生控件适配 |
+| [transmission/transmission](https://github.com/transmission/transmission) | ★★★☆☆ | 跨平台BT下载工具、多协议解析、异步IO |
+| [qBittorrent/qBittorrent](https://github.com/qBittorrent/qBittorrent) | ★★★☆☆ | Qt桌面开发、P2P网络传输、客户端优化 |
+| [sqlitebrowser/sqlitebrowser](https://github.com/sqlitebrowser/sqlitebrowser) | ★★★☆☆ | Qt数据库可视化工具、SQL解析、跨平台打包 |
+| [mltframework/shotcut](https://github.com/mltframework/shotcut) | ★★★★☆ | Qt视频编辑器、多线程渲染、FFmpeg深度集成 |
+| [Genymobile/scrcpy](https://github.com/Genymobile/scrcpy) | ★★★☆☆ | Android屏幕镜像、低延迟USB/WiFi传输、ADB协议 |
 
 ### 嵌入式开发
 | 项目名称                                                         | 难度       | 核心技能                                   |
@@ -429,8 +471,14 @@ auto attributed = [] [[nodiscard]] (int x) { return x * x; };
 | [lvgl/lvgl](https://github.com/lvgl/lvgl)                      | ★★☆☆☆     | 嵌入式 GUI 最强库                          |
 | [zephyrproject-rtos/zephyr](https://github.com/zephyrproject-rtos/zephyr) | ★★★★☆ | 现代 RTOS、BLE、驱动                       |
 | [platformio/platformio-core](https://github.com/platformio/platformio-core) | ★★★☆☆ | 嵌入式构建系统                             |
-| [RT-Thread/rt-thread](https://github.com/RT-Thread/rt-thread)   | ★★★★☆     | 国产最强 RTOS、组件化                      |
+| [RT-Thread/rt-thread](https://github.com/RT-Thread/rt-thread)   | ★★★★☆     | 国产RTOS、组件化                      |
 | [espressif/esp-idf](https://github.com/espressif/esp-idf)      | ★★★★☆     | ESP32 官方 SDK、低功耗                     |
+| [ARM-software/CMSIS_5](https://github.com/ARM-software/CMSIS_5) | ★★★☆☆ | ARM内核标准接口、嵌入式固件开发 |
+| [littlevgl/lv_drivers](https://github.com/littlevgl/lv_drivers) | ★★☆☆☆ | 嵌入式显示驱动、外设适配、LVGL配套驱动 |
+| [chibios/ChibiOS](https://github.com/chibios/ChibiOS) | ★★★★☆ | 轻量级RTOS、实时调度、嵌入式中断管理 |
+| [project-chip/connectedhomeip](https://github.com/project-chip/connectedhomeip) | ★★★★☆ | Matter智能家居协议栈、BLE/Thread、设备认证 |
+| [espressif/esp-adf](https://github.com/espressif/esp-adf)           | ★★★★☆ | ESP32音频框架、Wi-Fi音频流、DSP算法 |
+| [wolfSSL/wolfSSL](https://github.com/wolfSSL/wolfSSL)               | ★★★☆☆ | 嵌入式TLS/加密库、轻量SSL、硬件加密加速 |
 
 ### 后端/服务器开发
 | 项目名称                                                         | 难度       | 核心技能                                   |
@@ -442,6 +490,12 @@ auto attributed = [] [[nodiscard]] (int x) { return x * x; };
 | [Tencent/libco](https://github.com/Tencent/libco)               | ★★★★☆     | 协程库（微信后台在用）                     |
 | [scylladb/seastar](https://github.com/scylladb/seastar)         | ★★★★★     | 共享无锁、百万 QPS                         |
 | [userver-framework/userver](https://github.com/userver-framework/userver) | ★★★★★ | C++20 协程服务框架                         |
+| [grpc/grpc](https://github.com/grpc/grpc) | ★★★★☆ | 高性能RPC框架、Protocol Buffers序列化 |
+| [mongocxx/mongocxx](https://github.com/mongodb/mongocxx) | ★★★☆☆ | MongoDB C++驱动、文档型数据库交互 |
+| [cpp-netlib/cpp-netlib](https://github.com/cpp-netlib/cpp-netlib) | ★★★☆☆ | 跨平台网络库、HTTP客户端/服务器开发 |
+| [abseil/abseil-cpp](https://github.com/abseil/abseil-cpp)   | ★★☆☆☆ | Google高性能基础库、字符串/容器/并发工具 |
+| [idealvin/coost](https://github.com/idealvin/coost)         | ★★★☆☆ | 协程+日志+单元测试全家桶、陈硕最新力作 |
+| [oatpp/oatpp](https://github.com/oatpp/oatpp)               | ★★☆☆☆ | 零依赖Web框架、ORM、Swagger自动生成 |
 
 ### 游戏开发
 | 项目名称                                                         | 难度       | 核心技能                                   |
@@ -451,7 +505,20 @@ auto attributed = [] [[nodiscard]] (int x) { return x * x; };
 | [RobLoach/raylib-cpp](https://github.com/RobLoach/raylib-cpp)   | ★★☆☆☆     | 极简游戏开发库                             |
 | [TheCherno/Hazel](https://github.com/TheCherno/Hazel)           | ★★★★☆     | 从零写游戏引擎（教学级）                   |
 | [godotengine/godot](https://github.com/godotengine/godot)      | ★★★★☆     | 完整开源引擎                               |
-| [cocos2d/cocos-engine](https://github.com/cocos/cocos-engine)| ★★★★☆     | 国内手游最强引擎                           |
+| [cocos2d/cocos-engine](https://github.com/cocos/cocos-engine)| ★★★★☆     | 国内手游引擎                           |
+| [microsoft/Zork](https://github.com/microsoft/Zork) | ★★☆☆☆ | 经典文字冒险游戏架构、交互式逻辑设计 |
+| [Ogre3D/Ogre](https://github.com/OGRECave/ogre) | ★★★★☆ | 3D渲染引擎、场景管理、材质系统 |
+| [Polycode/Polycode](https://github.com/ivansafrin/Polycode) | ★★★☆☆ | 跨平台游戏开发框架、2D/3D一体化开发 |
+| [bkaradzic/bgfx](https://github.com/bkaradzic/bgfx)         | ★★★★☆ | 跨平台渲染后端、Vulkan/Metal/DX12抽象 |
+| [NVIDIA-Omniverse/PhysX](https://github.com/NVIDIA-Omniverse/PhysX) | ★★★★☆ | 物理引擎、刚体/布料模拟、GPU加速 |
+| [Urho3D/Urho3D](https://github.com/Urho3D/Urho3D)           | ★★★★☆ | 轻量级3D引擎、脚本绑定、网络同步 |
+| [educ8s/Cpp-Retro-Snake-Game-with-raylib](https://github.com/educ8s/Cpp-Retro-Snake-Game-with-raylib) | ★★☆☆☆ | raylib复古贪吃蛇、游戏循环、碰撞检测、得分系统<grok-card data-id="f3188e" data-type="citation_card"></grok-card> |
+| [mmistika/SFML-SnakeGame](https://github.com/mmistika/SFML-SnakeGame) | ★★☆☆☆ | SFML贪吃蛇、图形渲染、键盘输入、边界检查<grok-card data-id="163cbc" data-type="citation_card"></grok-card> |
+| [pknowledge/C-Snake-Game](https://github.com/pknowledge/C-Snake-Game) | ★☆☆☆☆ | ncurses终端贪吃蛇、控制台游戏、数组模拟蛇身<grok-card data-id="166b27" data-type="citation_card"></grok-card> |
+| [radumirea/cpp-tetris](https://github.com/radumirea/cpp-tetris) | ★★★☆☆ | C++俄罗斯方块克隆、方块旋转、行消除、AI备选<grok-card data-id="58ed9d" data-type="citation_card"></grok-card> |
+| [educ8s/Cpp-Tetris-Game-with-raylib](https://github.com/educ8s/Cpp-Tetris-Game-with-raylib) | ★★☆☆☆ | raylib俄罗斯方块、块生成、碰撞物理、预览系统<grok-card data-id="39a6f0" data-type="citation_card"></grok-card> |
+| [Nathandelenclos/Arcade](https://github.com/Nathandelenclos/Arcade) | ★★★☆☆ | SFML吃豆人+贪吃蛇、多库支持、OOP游戏架构、AI幽灵<grok-card data-id="b7995e" data-type="citation_card"></grok-card> |
+| [arseniisemenow/c-cpp-brickgame-cli-desktop-tetris-snake-1](https://github.com/arseniisemenow/c-cpp-brickgame-cli-desktop-tetris-snake-1) | ★★☆☆☆ | 终端砖块游戏（Tetris+Snake）、控制台输入、多模式支持<grok-card data-id="54c902" data-type="citation_card"></grok-card> |7.7秒
 
 ### 音视频/流媒体开发
 | 项目名称                                                         | 难度       | 核心技能                                   |
@@ -461,6 +528,12 @@ auto attributed = [] [[nodiscard]] (int x) { return x * x; };
 | [bluenviron/mediamtx](https://github.com/bluenviron/mediamtx)   | ★★★☆☆     | 零依赖流媒体服务器                         |
 | [Haivision/srt](https://github.com/Haivision/srt)               | ★★★★☆     | 低延迟传输协议                             |
 | [isl-org/Open3D](https://github.com/isl-org/Open3D)             | ★★★★☆     | 3D 数据处理、点云                          |
+| [libavif/libavif](https://github.com/AOMediaCodec/libavif) | ★★★☆☆ | AVIF图像编解码、多媒体格式处理 |
+| [xiph/vorbis](https://github.com/xiph/vorbis) | ★★★☆☆ | 开源音频编码、有损压缩算法、音频流处理 |
+| [GStreamer/gstreamer](https://github.com/GStreamer/gstreamer) | ★★★★☆ | 流媒体处理框架、插件化架构、音视频管线 |
+| [gpac/gpac](https://github.com/gpac/gpac)                   | ★★★★☆ | MP4Box作者、多媒体容器、分片/封装处理 |
+| [xiph/rav1e](https://github.com/xiph/rav1e)                 | ★★★★☆ | AV1编码器、SIMD并行优化 |
+| [videolan/libbluray](https://github.com/videolan/libbluray) | ★★★☆☆ | Blu-ray解码、H.265流、导航菜单 |
 
 ### 人工智能/机器学习
 | 项目名称                                                         | 难度       | 核心技能                                   |
@@ -471,6 +544,12 @@ auto attributed = [] [[nodiscard]] (int x) { return x * x; };
 | [alibaba/MNN](https://github.com/alibaba/MNN)                   | ★★★★☆     | 阿里移动端推理引擎                         |
 | [microsoft/onnxruntime](https://github.com/microsoft/onnxruntime) | ★★★☆☆   | 跨平台模型推理                             |
 | [pytorch/pytorch (LibTorch)](https://github.com/pytorch/pytorch) | ★★★★☆   | C++ 动态图、自定义算子                     |
+| [huawei-noah/UCM](https://github.com/huawei-noah/UCM) | ★★★★☆ | AI推理缓存管理、长序列推理优化 |
+| [openvinotoolkit/openvino](https://github.com/openvinotoolkit/openvino) | ★★★★☆ | 英特尔推理引擎、模型优化、异构计算 |
+| [dmlc/xgboost](https://github.com/dmlc/xgboost) | ★★★★☆ | 梯度提升树算法、分布式训练、机器学习工程化 |
+| [PaddlePaddle/Paddle](https://github.com/PaddlePaddle/Paddle) | ★★★★☆ | 飞桨推理引擎、自定义Op、分布式训练 |
+| [oneapi-src/oneDNN](https://github.com/oneapi-src/oneDNN)   | ★★★☆☆ | DNN原语库、AVX512向量化、Intel/ARM优化 |
+| [kaldi-asr/kaldi](https://github.com/kaldi-asr/kaldi)       | ★★★★☆ | 语音识别工具链、声学模型、特征提取 |
 
 ### 系统编程/内核开发
 | 项目名称                                                         | 难度       | 核心技能                                   |
@@ -481,6 +560,34 @@ auto attributed = [] [[nodiscard]] (int x) { return x * x; };
 | [microsoft/Detours](https://github.com/microsoft/Detours)       | ★★★★☆     | Windows Hook                               |
 | [ClickHouse/ClickHouse](https://github.com/ClickHouse/ClickHouse) | ★★★★★   | 列式数据库、向量化执行                     |
 | [torvalds/linux](https://github.com/torvalds/linux)             | ★★★★★     | 内核开发                                   |
+| [llvm/llvm](https://github.com/llvm/llvm) | ★★★★★ | 编译器架构、中间代码优化、多语言支持 |
+| [valgrind/valgrind](https://github.com/valgrind/valgrind) | ★★★★☆ | 内存调试、性能分析、程序错误检测 |
+| [jemalloc/jemalloc](https://github.com/jemalloc/jemalloc) | ★★★★☆ | 高性能内存分配器、内存碎片优化 |
+
+### 数据处理与存储
+| 项目名称 | 难度 | 核心技能 |
+|----------------------------------------------------------------|--------|----------------------------------------|
+| [apache/thrift](https://github.com/apache/thrift) | ★★★☆☆ | 跨语言序列化、数据传输协议、分布式通信 |
+| [rapidjson/rapidjson](https://github.com/Tencent/rapidjson) | ★★☆☆☆ | 高性能JSON解析、内存高效处理、跨平台适配 |
+| [leveldb/leveldb](https://github.com/google/leveldb) | ★★★☆☆ | 嵌入式键值数据库、LSM树存储、数据压缩 |
+| [reactos/reactos](https://github.com/reactos/reactos)       | ★★★★★ | 开源Windows NT内核、驱动模型、文件系统 |
+| [nanomsg/nng](https://github.com/nanomsg/nng)               | ★★☆☆☆ | 轻量消息库、ZeroMQ后继、异步通信 |
+| [libevent/libevent](https://github.com/libevent/libevent)   | ★★★☆☆ | 事件驱动库、epoll/kqueue、Reactor模式 |
+
+### 安全相关开发
+| 项目名称 | 难度 | 核心技能 |
+|----------------------------------------------------------------|--------|----------------------------------------|
+| [openssl/openssl](https://github.com/openssl/openssl) | ★★★★☆ | 加密算法实现、SSL/TLS协议、安全通信 |
+| [curl/curl](https://github.com/curl/curl) | ★★★☆☆ | 网络请求安全、多协议支持、证书验证 |
+| [libssh2/libssh2](https://github.com/libssh2/libssh2) | ★★★☆☆ | SSH2协议实现、安全远程连接、数据加密传输 |
+
+### 分布式系统开发
+| 项目名称 | 难度 | 核心技能 |
+|----------------------------------------------------------------|--------|----------------------------------------|
+| [ceph/ceph](https://github.com/ceph/ceph) | ★★★★★ | 分布式存储系统、对象存储、集群管理 |
+| [etcd-io/etcd-cpp-apiv3](https://github.com/etcd-io/etcd-cpp-apiv3) | ★★★☆☆ | 分布式键值存储客户端、服务发现、一致性协议 |
+| [apache/rocketmq-client-cpp](https://github.com/apache/rocketmq-client-cpp) | ★★★☆☆ | 消息队列客户端、异步通信、分布式消息投递 |
+
 
 ## 面试题
 [static 关键字的作用](interview_questions/README.md#static-关键字的作用)  
@@ -574,3 +681,23 @@ auto attributed = [] [[nodiscard]] (int x) { return x * x; };
 [简述无锁编程的优缺点](interview_questions/README.md#简述无锁编程的优缺点)  
 [TIME_WAIT 状态是什么](interview_questions/README.md#time-wait-状态是什么)  
 [什么是 Reactor 和 Proactor 网络模型](interview_questions/README.md#什么是-reactor-和-proactor-网络模型)  
+[MySQL 的存储引擎 InnoDB 和 MyISAM 的区别是什么？如何选择？](interview_questions/README.md#mysql-的存储引擎-innodb-和-myisam-的区别是什么如何选择)
+[什么是事务？请详细解释 MySQL 事务的 ACID 特性。](interview_questions/README.md#什么是事务请详细解释-mysql-事务的-acid-特性)
+[什么是脏读、不可重复读和幻读？MySQL 是如何通过事务隔离级别解决这些问题的？](interview_questions/README.md#什么是脏读不可重复读和幻读mysql-是如何通过事务隔离级别解决这些问题的)
+[详细解释 MySQL 的四种事务隔离级别（读未提交、读已提交、可重复读、串行化）。](interview_questions/README.md#详细解释-mysql-的四种事务隔离级别读未提交读已提交可重复读串行化)
+[MySQL InnoDB 的默认隔离级别是什么？它是如何解决幻读问题的？](interview_questions/README.md#mysql-innodb-的默认隔离级别是什么它是如何解决幻读问题的)
+[什么是 MVCC（多版本并发控制）？InnoDB 是如何实现 MVCC 的？](interview_questions/README.md#什么是-mvcc多版本并发控制innodb-是如何实现-mvcc-的)
+[说说你对 InnoDB 聚簇索引和非聚簇索引的理解。为什么主键查询效率高？](interview_questions/README.md#说说你对-innodb-聚簇索引和非聚簇索引的理解为什么主键查询效率高)
+[为什么推荐使用自增主键？使用 UUID 或者业务字段作为主键有什么潜在问题？](interview_questions/README.md#为什么推荐使用自增主键使用-uuid-或者业务字段作为主键有什么潜在问题)
+[什么是覆盖索引？它为什么能显著提升查询性能？](interview_questions/README.md#什么是覆盖索引它为什么能显著提升查询性能)
+[索引的最左前缀原则是什么？请举例说明。](interview_questions/README.md#索引的最左前缀原则是什么请举例说明)
+[在哪些情况下，即使建立了索引，MySQL 也不会使用它？](interview_questions/README.md#在哪些情况下即使建立了索引mysql-也不会使用它)
+[如何进行 SQL 查询的性能优化？你通常会从哪些方面入手？](interview_questions/README.md#如何进行-sql-查询的性能优化你通常会从哪些方面入手)
+[什么是数据库的慢查询？如何定位和优化慢查询？](interview_questions/README.md#什么是数据库的慢查询如何定位和优化慢查询)
+[什么是间隙锁（Gap Lock）？它解决了什么问题？](interview_questions/README.md#什么是间隙锁gap-lock它解决了什么问题)
+[数据库连接池的作用是什么？在 C++ 程序中为什么要使用连接池？](interview_questions/README.md#数据库连接池的作用是什么在-c++-程序中为什么要使用连接池)
+[什么是数据库的死锁？MySQL 中如何检测和避免死锁？](interview_questions/README.md#什么是数据库的死锁mysql-中如何检测和避免死锁)
+[简述一下 MySQL 的 Binlog 和 Redo Log 的作用和区别。](interview_questions/README.md#简述一下-mysql-的-binlog-和-redo-log-的作用和区别)
+[如何进行 MySQL 的读写分离和分库分表？它们分别解决了什么问题？](interview_questions/README.md#如何进行-mysql-的读写分离和分库分表它们分别解决了什么问题)
+[MySQL 索引为什么使用 B+树而不是 B 树或哈希表？](interview_questions/README.md#mysql-索引为什么使用-b+树而不是-b-树或哈希表)
+[请详细描述 B+树的结构特点，InnoDB 中的 B+树索引有哪些优化？](interview_questions/README.md#请详细描述-b+树的结构特点innodb-中的-b+树索引有哪些优化)
