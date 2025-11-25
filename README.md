@@ -505,7 +505,7 @@ auto attributed = [] [[nodiscard]] (int x) { return x * x; };
 | [RobLoach/raylib-cpp](https://github.com/RobLoach/raylib-cpp)   | ★★☆☆☆     | 极简游戏开发库                             |
 | [TheCherno/Hazel](https://github.com/TheCherno/Hazel)           | ★★★★☆     | 从零写游戏引擎（教学级）                   |
 | [godotengine/godot](https://github.com/godotengine/godot)      | ★★★★☆     | 完整开源引擎                               |
-| [cocos2d/cocos-engine](https://github.com/cocos/cocos-engine)| ★★★★☆     | 国内手游引擎                           |
+| [cocos2d/cocos-engine](https://github.com/cocos/cocos-engine)| ★★★★☆     | 国内最常用的手游引擎之一                           |
 | [microsoft/Zork](https://github.com/microsoft/Zork) | ★★☆☆☆ | 经典文字冒险游戏架构、交互式逻辑设计 |
 | [Ogre3D/Ogre](https://github.com/OGRECave/ogre) | ★★★★☆ | 3D渲染引擎、场景管理、材质系统 |
 | [Polycode/Polycode](https://github.com/ivansafrin/Polycode) | ★★★☆☆ | 跨平台游戏开发框架、2D/3D一体化开发 |
