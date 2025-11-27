@@ -115,7 +115,7 @@
 |------|----------|----------------|--------------|
 | 第0周 | 阶段0 | [C++ 开发环境搭建指南](https://github.com/0voice/awesome-modern-cpp-2025/blob/main/environment_setup/README.md)或[清晰易懂的C+＋开发环境搭建教程](https://blog.51cto.com/u_16349720/14112761)| 完成开发环境搭建 |
 | 第1-3周  | 阶段 1 | [黑马程序员](https://www.bilibili.com/video/BV1et411b73Z/?spm_id_from=333.337.search-card.all.click&vd_source=b1133efda5c53025ed35233121e57402)| 完成3个demo放GitHub |
-| 第4-7周  | 阶段 2 | 《C++ Primer Plus》 | 学生/图书管理系统完整版 |
+| 第4-7周  | 阶段 2 | 《C++ Primer》 | 学生/图书管理系统完整版 |
 | 第7-9周  | 阶段 3 | 《Effective Modern C++》 | 词频统计工具 |
 | 第10-15周 | 阶段 4 | 重点项目三选一或[实战项目](#实战项目)中选一个大项目 | 完成项目传GitHub |
 | 第16-18周 | 阶段 5 | 牛客/LeetCode C++ 专区 | 高频笔面题 + 项目复盘 |
