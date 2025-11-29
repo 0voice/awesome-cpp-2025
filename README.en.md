@@ -35,6 +35,12 @@ Relevant discussions:
 - [The Truth About C++ (Is It Still Worth Your Time?)](https://www.youtube.com/watch?v=q1ZmFc-sqNc)
 - [Best C/C++ Learning Roadmap 2025](https://www.youtube.com/watch?v=gO4Jp78nM0g)
 
+Want to know what the father of C++, **Bjarne Stroustrup**, has personally answered about C++ in interviews and Q&As?  
+Please refer to: [Bjarne Stroustrup's FAQ](#bjarne-stroustrups-faq).
+
+Want to read the latest C++ Standards Committee (WG21) proposals and papers?  
+Please visit: [WG21 Papers](https://github.com/0voice/cpp-learning-2025/tree/main/WG21-Papers).
+
 ## Table of Contents
 - [Learning Roadmap](#learning-roadmap)
 - [Core Knowledge](#core-knowledge)
@@ -47,7 +53,8 @@ Relevant discussions:
 - [Interview Preparation](#interview-preparation)
 - [LeetCode Problems](#leetcode-problems)
 - [Bjarne Stroustrup's FAQ](bjarne-stroustrups-faq)
-- [WG21 Papers](https://github.com/0voice/awesome-cpp-2025/tree/main/WG21-Papers)
+- [Resource Declaration](#resource-declaration)
+
 ## Learning Roadmap
 
   <img src="https://raw.githubusercontent.com/0voice/awesome-modern-cpp-2025/main/roadmap/cpp-roadmap.en.svg">
@@ -835,3 +842,15 @@ Difficulty guide (from a true zero-basis perspective):
 - [Why did you go to work at Texas A&M University?](https://www.stroustrup.com/bs_faq.html#tamu)
 - [Why did you go to work at Bell labs?](https://www.stroustrup.com/bs_faq.html#btl)
 - [What are you working on now?](https://www.stroustrup.com/bs_faq.html#working-on-now)
+
+## Resource Declaration
+
+This repository is created solely for personal learning, organization, and non-commercial sharing purposes. All materials, links, and code snippets collected herein are sourced from publicly available resources on the Internet.
+
+All resources are intended **exclusively for study and exchange** and must not be used for any commercial purposes.
+
+Copyright of all content remains with the original authors or respective platforms. The maintainer of this repository claims no ownership or copyright over the included materials.
+
+If any original author or copyright holder believes that a link or resource has been included inappropriately, please contact me via GitHub Issues or email. I will remove the relevant content or links immediately upon notification.
+
+Special thanks to all the generous contributors and authors across the Internet — it is because of your openly shared knowledge that more people can learn C++ efficiently and at low cost!
